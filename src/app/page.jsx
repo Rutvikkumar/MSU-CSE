@@ -1,7 +1,9 @@
 "use client";
 import React from "react";
-
+import Head from "next/head";
+import CourseCategories from "../components/ui/CourseCategories.tsx"
 import Link from "next/link"
+import Image from "next/image";
 
 const data = [
   {
@@ -35,6 +37,38 @@ export default function Main(){
     backgroundSize:"cover",
     height:'100%'
   }
+
+
+  const categories = [
+    {
+      id: '1',
+      title: 'SCIENCE & TECHNOLOGY',
+      description: 'Lorem ipsum dolor sit amet, consecte elsed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut.',
+      icon: '/icons/science-icon.svg', // You'll need to create these icons
+      link: '/courses/science'
+    },
+    {
+      id: '2',
+      title: 'HEALTH & PSYCHOLOGY',
+      description: 'Lorem ipsum dolor sit amet, consecte elsed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut.',
+      icon: '/icons/health-icon.svg',
+      link: '/courses/health'
+    },
+    {
+      id: '3',
+      title: 'REAL ESTATE LAW',
+      description: 'Lorem ipsum dolor sit amet, consecte elsed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut.',
+      icon: '/icons/realestate-icon.svg',
+      link: '/courses/realestate'
+    },
+    {
+      id: '4',
+      title: 'SCIENCE & TECHNOLOGY',
+      description: 'Lorem ipsum dolor sit amet, consecte elsed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut.',
+      icon: '/icons/technology-icon.svg',
+      link: '/courses/technology'
+    },
+  ];
   return(
     <>
     <header className="flex items-center justify-between py-5 px-8  text-black bg-white drop-shadow-md">
@@ -45,11 +79,11 @@ export default function Main(){
       <nav>
         <ul className="flex gap-3">
           <Link className=" text-xl py-3 px-4 hover:bg-sky-400 transition-all rounded hover:text-white cursor-pointer" href="#">Home</Link>
-          <Link className=" text-xl py-3 px-5 hover:bg-sky-400 transition-all rounded hover:text-white cursor-pointer" href="#">Courses</Link>
+          <Link className=" text-xl py-3 px-5 hover:bg-sky-400 transition-all rounded hover:text-white cursor-pointer" href="#">About</Link>
           <Link className=" text-xl py-3 px-5 hover:bg-sky-400 transition-all rounded hover:text-white cursor-pointer" href="#">News</Link>
           <Link className=" text-xl py-3 px-5 hover:bg-sky-400 transition-all rounded hover:text-white cursor-pointer" href="#">Staff</Link>
           <Link className=" text-xl py-3 px-5 hover:bg-sky-400 transition-all rounded hover:text-white cursor-pointer" href="#">Contact</Link>
-          <Link className=" text-xl py-3 px-5 hover:bg-sky-400 transition-all rounded hover:text-white cursor-pointer" href="#">About</Link>
+          <Link className=" text-xl py-3 px-5 hover:bg-sky-400 transition-all rounded hover:text-white cursor-pointer" href="#">Courses</Link>
         </ul>
       </nav>
       </section>
@@ -62,8 +96,18 @@ export default function Main(){
         </section>
       </section>
     </main>
-   
-    <footer className="w-full items-center justify-center py-8 bg-blue-500">
+
+    <Head>
+        <title>Course Categories</title>
+        <meta name="description" content="Browse our course categories" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      
+      <main>
+        <CourseCategories categories={categories} />
+      </main>
+    
+      <footer className="w-full items-center justify-center py-8 bg-blue-500">
       <section className="w-4/5 mx-auto flex items-center justify-between">
         <section className="flex flex-col space-y-4">
           <section className="flex space-x-8">
@@ -86,6 +130,7 @@ export default function Main(){
         </section>
       </section>
     </footer>
+   
     </>
   )
 }
