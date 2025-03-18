@@ -1,93 +1,152 @@
-import React from 'react';
+"use client"
+
+import { useState } from 'react';
 import ProfileCard from '../../components/ui/ProfileCard';
 import Link from 'next/link';
 
 
 
-const ProfileCardsLayout: React.FC = () => {
 
-  const profiles = [
-    {
-      id: 1,
-      name: 'Bessie Cooper',
-      title: 'Mentor',
-      imageUrl: '/staff/image1.jpg', 
-      nameColor: 'default' as const
-    },
-    {
-      id: 2,
-      name: 'Arlene McCoy',
-      title: 'Senior Mentor',
-      imageUrl: '/staff/image1.jpg',
-      nameColor: 'teal' as const
-    },
-    {
-      id: 3,
-      name: 'Brooklyn Simmons',
-      title: 'Assistant Teacher',
-      imageUrl: '/staff/image1.jpg',
-      nameColor: 'default' as const
-    },
-    {
-      id: 4,
-      name: 'Brooklyn Simmons',
-      title: 'Assistant Teacher',
-      imageUrl: '/staff/image1.jpg',
-      nameColor: 'default' as const
-    },
-    {
-      id: 5,
-      name: 'Brooklyn Simmons',
-      title: 'Assistant Teacher',
-      imageUrl: '/staff/image1.jpg',
-      nameColor: 'default' as const
-    },
-    {
-      id: 6,
-      name: 'Brooklyn Simmons',
-      title: 'Assistant Teacher',
-      imageUrl: '/staff/image1.jpg',
-      nameColor: 'default' as const
-    }
+export default function Staff() {
+  const [activeTab, setActiveTab] = useState('teaching');
+
+  const tabs = [
+    { id: 'teaching', label: 'Teaching' },
+    { id: 'non-teaching', label: 'Non-Teaching' },
+    { id: 'administrative', label: 'Administrative' },
+    { id: 'office-staff', label: 'Office Staff' },
   ];
-  return (
-  <>
-  <header className="flex items-center justify-between py-5 px-8  text-black bg-white drop-shadow-md">
-        <section className="w-4/5 mx-auto flex items-center justify-between">
-        <a href="#">
-          <img className="w-44 hover:scale-105 transition-all" src="/next.svg" alt="TEXT"/>
-        </a>
-        <nav>
-          <ul className="flex gap-3">
-            <Link className=" text-xl py-3 px-4 hover:bg-sky-400 transition-all rounded hover:text-white cursor-pointer" href="#">Home</Link>
-            <Link className=" text-xl py-3 px-5 hover:bg-sky-400 transition-all rounded hover:text-white cursor-pointer" href="#">About</Link>
-            <Link className=" text-xl py-3 px-5 hover:bg-sky-400 transition-all rounded hover:text-white cursor-pointer" href="#">News</Link>
-            <Link className=" text-xl py-3 px-5 hover:bg-sky-400 transition-all rounded hover:text-white cursor-pointer" href="#">Staff</Link>
-            <Link className=" text-xl py-3 px-5 hover:bg-sky-400 transition-all rounded hover:text-white cursor-pointer" href="#">Contact</Link>
-            <Link className=" text-xl py-3 px-5 hover:bg-sky-400 transition-all rounded hover:text-white cursor-pointer" href="#">Courses</Link>
-          </ul>
-        </nav>
-        </section>
-      </header>
-  <main>
-  <div className="container mx-auto py-8">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {profiles.map((profile) => (
-          <div key={profile.id} className="flex justify-center">
-            <ProfileCard
-              name={profile.name}
-              title={profile.title}
-              imageUrl={profile.imageUrl}
-              nameColor={profile.nameColor}
-              linkto = {`/staff/${profile.id}`}
-            />
+
+  const getTabContent = () => {
+
+    const teaching = [
+          {
+            id: 1,
+            name: 'Bessie Cooper',
+            title: 'Mentor',
+            imageUrl: '/staff/profile.jpg', // Replace with your actual image paths
+            nameColor: 'default' as const
+          },
+          {
+            id: 2,
+            name: 'Arlene McCoy',
+            title: 'Senior Mentor',
+            imageUrl: '/staff/profile.jpg',
+            nameColor: 'teal' as const
+          },
+          {
+            id: 3,
+            name: 'Brooklyn Simmons',
+            title: 'Assistant Teacher',
+            imageUrl: '/staff/profile.jpg',
+            nameColor: 'default' as const
+          },
+          {
+            id: 4,
+            name: 'Brooklyn Simmons',
+            title: 'Assistant Teacher',
+            imageUrl: '/staff/profile.jpg',
+            nameColor: 'default' as const
+          },
+          {
+            id: 5,
+            name: 'Brooklyn Simmons',
+            title: 'Assistant Teacher',
+            imageUrl: '/staff/profile.jpg',
+            nameColor: 'default' as const
+          },
+           {
+            id: 6,
+            name: 'Brooklyn Simmons',
+            title: 'Assistant Teacher',
+            imageUrl: '/staff/profile.jpg',
+            nameColor: 'default' as const
+          }
+        ];
+
+
+
+        const nonTeaching = [
+          {
+            id: 1,
+            name: 'Bessie Cooper',
+            title: 'Mentor',
+            imageUrl: '/staff/profile.jpg', // Replace with your actual image paths
+            nameColor: 'default' as const
+          },
+          {
+            id: 2,
+            name: 'Arlene McCoy',
+            title: 'Senior Mentor',
+            imageUrl: '/staff/profile.jpg',
+            nameColor: 'teal' as const
+          },
+        ];
+    switch (activeTab) {
+      case 'teaching':
+        return<>
+            <div className="container mx-auto py-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {teaching.map((profile) => (
+                  <div key={profile.id} className="flex justify-center">
+                    <ProfileCard
+                      name={profile.name}
+                      title={profile.title}
+                      imageUrl={profile.imageUrl}
+                      nameColor={profile.nameColor}
+                      linkto=''
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </>
+      case 'non-teaching':
+        return <>
+        <div className="container mx-auto py-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {nonTeaching.map((profile) => (
+              <div key={profile.id} className="flex justify-center">
+                <ProfileCard
+                  name={profile.name}
+                  title={profile.title}
+                  imageUrl={profile.imageUrl}
+                  nameColor={profile.nameColor}
+                  linkto=''
+                />
+              </div>
+            ))}
           </div>
+        </div>
+      </>;
+      case 'administrative':
+        return <div>Administrative Staff Content</div>;
+      case 'office-staff':
+        return <div>Office Staff Content</div>;
+      default:
+        return null;
+    }
+  };
+
+  return (
+    <div className="p-8">
+      <h1 className="text-2xl font-bold mb-4">Staff</h1>
+      <div className="flex space-x-4 border-b">
+        {tabs.map((tab) => (
+          <button
+            key={tab.id}
+            onClick={() => setActiveTab(tab.id)}
+            className={`px-4 py-2 ${
+              activeTab === tab.id
+                ? 'border-b-2 border-blue-500 text-blue-500'
+                : 'text-gray-500'
+            }`}
+          >
+            {tab.label}
+          </button>
         ))}
       </div>
+      <div className="mt-4">{getTabContent()}</div>
     </div>
-  </main>
-  </>
   );
-};
-
-export default ProfileCardsLayout;
+}
