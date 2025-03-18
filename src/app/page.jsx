@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
 import Link from "next/link";
-import { FaHome, FaBook, FaNewspaper, FaUsers, FaEnvelope, FaInfoCircle, FaFlask, FaGraduationCap, FaChalkboardTeacher } from "react-icons/fa";
-import { AiOutlineMail, AiOutlinePhone } from "react-icons/ai";
+import {  FaBook, FaUsers, FaFlask, FaGraduationCap, FaChalkboardTeacher } from "react-icons/fa";
+
 
 const backgroundData = [
   {
