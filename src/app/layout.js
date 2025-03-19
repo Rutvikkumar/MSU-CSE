@@ -1,5 +1,5 @@
 import { Geist, Geist_Mono } from "next/font/google";
-import { FaHome, FaBook, FaNewspaper, FaUsers, FaEnvelope, FaInfoCircle, FaFlask, FaGraduationCap, FaChalkboardTeacher } from "react-icons/fa";
+import { FaHome, FaBook, FaNewspaper, FaUsers, FaEnvelope, FaInfoCircle, FaFlask, FaGraduationCap, FaChalkboardTeacher, FaLightbulb } from "react-icons/fa";
 import { AiOutlineMail, AiOutlinePhone } from "react-icons/ai";
 import Link from "next/link";
 import "./globals.css";
@@ -120,7 +120,8 @@ export default function RootLayout({ children }) {
             
             <ul className="flex gap-3">
               <NavLink href="/" icon={<FaHome />} text="Home" />
-              <NavLink href="#" icon={<FaBook />} text="Courses" />
+              <NavLink href="/courses" icon={<FaBook />} text="Courses" />
+              <NavLink href="/clubs" icon={<FaLightbulb />} text="Clubs" />
               <NavLink href="#" icon={<FaNewspaper />} text="News" />
               <NavLink href="/staff" icon={<FaUsers />} text="Staff" />
               <NavLink href="/contact" icon={<FaEnvelope />} text="Contact" />
