@@ -20,7 +20,7 @@ export default function Staff() {
         id: 1,
         name: "Bessie Cooper",
         department: "Mentor",
-        imageUrl: "/staff/profile.jpg",
+        imageUrl: "/staff/Dilipsinh_M_Zala.jpg",
         profession: "Professor",
         nameColor: "default" as const,
       },
@@ -89,7 +89,7 @@ export default function Staff() {
         return (
           <>
             <div className="container mx-auto py-8">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
                 {teaching.map((profile) => (
                   <div key={profile.id} className="flex justify-center w-full">
                     <ProfileCard
@@ -126,7 +126,7 @@ export default function Staff() {
           </>
         );
       case "administrative":
-        return <div>Administrative Staff Content</div>;
+        return <div className="min-h-96">Administrative Staff Content</div>;
       case "office-staff":
         return <div>Office Staff Content</div>;
       default:

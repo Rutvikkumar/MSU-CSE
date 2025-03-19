@@ -12,10 +12,10 @@ interface ProfileCardProps {
 
 const ProfileCard: React.FC<ProfileCardProps> = ( { imageUrl, name, department,profession,linkto }) => {
   return (
-    <div className="w-full max-w-[260px] bg-white rounded-lg shadow-md hover:shadow-lg transition-transform transform hover:scale-105 duration-300 overflow-hidden">
+    <div className="w-full max-w-80 bg-white rounded-lg shadow-md hover:shadow-lg transition-transform transform hover:scale-105 duration-300 overflow-hidden">
     {/* Image Section */}
     <Link href={linkto} className="block hover:opacity-90 transition-opacity">
-      <div className="relative w-full h-[220px] bg-gray-100">
+      <div className="relative w-full h-60 bg-gray-100">
         <Image
           src={imageUrl}
           alt={`${name} profile picture`}
