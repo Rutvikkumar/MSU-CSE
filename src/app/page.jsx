@@ -7,17 +7,17 @@ import {  FaBook, FaUsers, FaFlask, FaGraduationCap, FaChalkboardTeacher } from 
 
 const backgroundData = [
   {
-    url: "/bg1.jpg",
+    url: "/techo-banner.png",
     title: "Welcome to Our College",
     body: "A premier institution dedicated to academic excellence and holistic development."
   },
   {
-    url: "/bg2.jpg",
+    url: "/techo-banner.png",
     title: "Innovative Learning Environment",
     body: "State-of-the-art facilities and experienced faculty to nurture your potential."
   },
   {
-    url: "/brand.jpg",
+    url: "/techo-banner.png",
     title: "Shape Your Future",
     body: "Join us to embark on a journey of knowledge and success."
   }
@@ -56,7 +56,7 @@ export default function Main() {
   React.useEffect(() => {
     const timer = setTimeout(() => {
       setIndex(prev => (prev + 1) % backgroundData.length);
-    }, 5000);
+    }, 2000);
     return () => clearTimeout(timer);
   }, [index]);
 
@@ -67,18 +67,19 @@ export default function Main() {
     minHeight: '100vh',
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+
   };
 
   return (
     <>
       <main>
         <section style={bgStyle} className="relative">
-          <div className="bg-white bg-opacity-90 p-8 rounded-lg max-w-2xl text-center mx-4">
-            <h1 className="text-4xl font-bold text-blue-900 mb-4">
+          <div className="p-8 rounded-lg max-w-2xl text-center mx-4">
+            <h1 className="text-5xl font-bold text-blue-900 mb-4">
               {backgroundData[index].title}
             </h1>
-            <p className="text-gray-700">
+            <p className="text-sky-950 text-xl">
               {backgroundData[index].body}
             </p>
           </div>
@@ -100,8 +101,8 @@ export default function Main() {
 const CollegeDescription = () => (
   <section className="bg-gradient-to-b from-blue-50 to-blue-100 py-16 px-8">
     <div className="max-w-6xl mx-auto">
-      <h2 className="text-3xl font-bold text-blue-900 mb-8">About Our College</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <h2 className="text-3xl font-bold text-blue-900 mb-8 inline-flex">About Our College</h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 justify-center">
         <div>
           <p className="text-gray-700 mb-4">
             Established in 1990, our college has been a beacon of quality education, 
@@ -117,18 +118,20 @@ const CollegeDescription = () => (
           >
             Learn More
           </Link>
-        </div>
+          </div>
+
+          <div>
+          <img
+            src="techo-home.png" // Random faculty image
+            alt="Faculty"
+            className="w-full  object-cover rounded-lg bg-center"
+          />
+          </div>
 
         {/* Right Side: Image Only */}
-        <div className="bg-white p-6 rounded-lg shadow-lg border border-blue-100">
-          <img
-            src="https://picsum.photos/id/1005/800/600" // Random faculty image
-            alt="Faculty"
-            className="w-full h-64 object-cover rounded-lg"
-          />
-        </div>
+       
       </div>
-    </div>
+      </div>
   </section>
 );
 
@@ -162,9 +165,9 @@ const CollegeStats = () => {
   ];
 
   return (
-    <section className="bg-gradient-to-b from-blue-800 to-blue-700 py-16 px-8">
+    <section className="bg-gradient-to-b from-blue-50 to-blue-100 py-16 px-8">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl font-bold text-white mb-12 text-center">Department at a Glance</h2>
+        <h2 className="text-3xl font-bold text-blue-900 mb-12 text-center">Department at a Glance</h2>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {stats.map((stat, index) => (
             <div

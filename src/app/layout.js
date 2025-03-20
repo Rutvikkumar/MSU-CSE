@@ -3,6 +3,7 @@ import { FaHome, FaBook, FaNewspaper, FaUsers, FaEnvelope, FaInfoCircle, FaFlask
 import { AiOutlineMail, AiOutlinePhone } from "react-icons/ai";
 import Link from "next/link";
 import "./globals.css";
+import Navbar from '../components/Header'
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,7 +33,7 @@ const NavLink = ({ href, icon, text }) => (
 const Footer = () => {
 
   return (
-    <footer className="bg-blue-800 text-white">
+    <footer className="bg-sky-950 text-white">
       <div className="max-w-6xl mx-auto py-16 px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Contact Form */}
@@ -111,7 +112,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-      <header className="bg-white shadow-md">
+      {/* <header className="bg-white shadow-md">
         <div className="max-w-6xl mx-auto py-3 px-8 flex items-center justify-between">
           <a href="#">
             <img className="w-36 h-16 hover:scale-105 transition-all bg-black" src="/MSU2.png" alt="College Logo"/>
@@ -128,7 +129,8 @@ export default function RootLayout({ children }) {
             </ul>
           </nav>
         </div>
-      </header>
+      </header> */}
+      <Navbar/>
         {children}
       <Footer />
       </body>
