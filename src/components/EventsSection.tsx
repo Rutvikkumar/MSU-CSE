@@ -74,7 +74,7 @@ const latestNews = [
 
 const EventsSection = () => {
   return (
-    <div className="container mx-auto py-8 flex flex-wrap justify-between gap-8">
+    <div className="bg-gradient-to-b from-blue-50 to-blue-100 px-8 container mx-auto py-8 flex flex-wrap justify-between gap-8">
       {/* Left Section: Upcoming Events */}
       <div className="w-full lg:w-[48%] flex flex-col justify-between">
         <div className="flex justify-between items-center mb-4">
@@ -136,7 +136,7 @@ const EventsSection = () => {
           ))}
         </div> */}
 
-<div className="flex flex-col space-y-6 overflow-y-auto max-h-[400px] p-4 bg-gray-50 rounded-lg">
+<div className="flex flex-col space-y-6 overflow-y-auto max-h-[400px] p-4 rounded-lg">
       {latestNews.map((news) => (
         <div
           key={news.id}

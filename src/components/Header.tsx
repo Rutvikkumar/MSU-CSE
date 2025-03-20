@@ -35,7 +35,7 @@ export default function Navbar() {
                 onMouseEnter={() => setActiveMenu(item.name)}
                 onMouseLeave={() => setActiveMenu(null)}
               >
-                <a href="#" className="flex items-center gap-2">
+                <a href={item.name.toLowerCase()} className="flex items-center gap-2">
                   {item.icon}
                   {item.name}
                 </a>

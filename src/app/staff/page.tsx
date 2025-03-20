@@ -109,7 +109,7 @@ export default function Staff() {
         return (
           <>
             <div className="container mx-auto py-8">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
                 {teaching.map((profile) => (
                   <div key={profile.id} className="flex justify-center w-full">
                     <ProfileCard
@@ -126,9 +126,50 @@ export default function Staff() {
           </>
         );
       case "administrative":
-        return <div className="min-h-96">Administrative Staff Content</div>;
+        return (
+          <div className="min-h-96">
+            <>
+              <div className="container mx-auto py-8">
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+                  {teaching.map((profile) => (
+                    <div
+                      key={profile.id}
+                      className="flex justify-center w-full"
+                    >
+                      <ProfileCard
+                        name={profile.name}
+                        department={profile.department}
+                        imageUrl={profile.imageUrl}
+                        profession={profile.profession}
+                        linkto=""
+                      />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </>
+          </div>
+        );
       case "office-staff":
-        return <div><EventsSection></EventsSection></div>;
+        return (
+          <>
+            <div className="container mx-auto py-8">
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+                {teaching.map((profile) => (
+                  <div key={profile.id} className="flex justify-center w-full">
+                    <ProfileCard
+                      name={profile.name}
+                      department={profile.department}
+                      imageUrl={profile.imageUrl}
+                      profession={profile.profession}
+                      linkto=""
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </>
+        );
       default:
         return null;
     }
