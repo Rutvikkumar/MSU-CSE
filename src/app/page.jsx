@@ -4,6 +4,7 @@ import Link from "next/link";
 import {  FaBook, FaUsers, FaFlask, FaGraduationCap, FaChalkboardTeacher } from "react-icons/fa";
 
 
+
 const backgroundData = [
   {
     url: "/bg1.jpg",

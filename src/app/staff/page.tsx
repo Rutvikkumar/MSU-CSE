@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import ProfileCard from "../../components/ui/ProfileCard";
-import Link from "next/link";
+import EventsSection from "@/components/EventsSection";
 
 export default function Staff() {
   const [activeTab, setActiveTab] = useState("teaching");
@@ -128,7 +128,7 @@ export default function Staff() {
       case "administrative":
         return <div className="min-h-96">Administrative Staff Content</div>;
       case "office-staff":
-        return <div>Office Staff Content</div>;
+        return <div><EventsSection></EventsSection></div>;
       default:
         return null;
     }

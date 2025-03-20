@@ -11,3 +11,14 @@ body {
     font-style: normal;
     
 }
+
+@layer components {
+    .aspect-w-16 {
+      position: relative;
+      padding-top: 56.25%;
+    }
+    .aspect-h-9 {
+      position: relative;
+      padding-top: 56.25%;
+    }
+  }
