@@ -33,25 +33,25 @@ const facultyMembers = [
     name: "Dr. Apurva Shah",
     designation: "Professor, Computer Science",
     expertise: "Operating System,Microprosessors",
-    image: "/faculty1.jpg",
+    image: "staff/Apurva-M-Shah.jpg",
   },
   {
     name: "Dr. Hetal Bhavsar",
     designation: "Associate Professor, Computer Science",
     expertise: "Compiler Design",
-    image: "/faculty2.jpg",
+    image: "staff/hetal-bravser.png",
   },
   {
     name: "Dr. Anjali Jivani",
     designation: "Associate Professor, Computer Science",
     expertise: "Database Management System",
-    image: "/faculty3.jpg",
+    image: "staff/Anjali-G-jivani.jpg",
   },
   {
     name: "Dr Mamta Padole",
     designation: "Associate Professor,Computer Science",
     expertise: "Java, Distributed System",
-    image: "/faculty4.jpg",
+    image: "staff/mamta-padole.jpg",
   },
 ];
 
@@ -125,7 +125,7 @@ const CollegeDescription = () => (
       
           <Link
             href="/about"
-            className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"
+            className="inline-block bg-sky-950 text-white px-6 py-3 rounded-lg hover:bg-sky-700 transition-colors"
           >
             Learn More
           </Link>
@@ -225,7 +225,7 @@ const FacultiesSection = () => {
         <div className="text-center mt-8">
           <Link
             href="/staff"
-            className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors inline-flex items-center"
+            className="bg-sky-950 text-white px-6 py-3 rounded-lg hover:bg-sky-700 transition-colors inline-flex items-center"
           >
             <FaChalkboardTeacher className="mr-2" />
             View All Staff
@@ -343,7 +343,7 @@ const ResearchSection = () => {
                 {research.title}
               </h3>
               <p className="text-gray-700">{research.description}</p>
-              <button className="mt-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors">
+              <button className="mt-4 bg-sky-950 text-white px-4 py-2 rounded hover:bg-sky-700 transition-colors">
                 Learn More
               </button>
             </div>

@@ -20,7 +20,7 @@ const ProfileCard: React.FC<ProfileCardProps> = ( { imageUrl, name, department,p
           src={imageUrl}
           alt={`${name} profile picture`}
           layout="fill"
-          objectFit="cover"
+          objectFit="fill"
           className="rounded-t-lg"
         />
       </div>
@@ -28,13 +28,13 @@ const ProfileCard: React.FC<ProfileCardProps> = ( { imageUrl, name, department,p
 
     {/* Content Section */}
     <div className="p-3 text-center">
-      <h3 className="text-lg font-semibold text-teal-600 truncate">{name}</h3>
-      <p className="text-gray-700 text-sm font-medium">{profession}</p>
+      <h3 className="text-lg font-semibold text-sky-950 truncate">{name}</h3>
+      <p className="text-black text-sm font-medium">{profession}</p>
       <p className="text-gray-500 text-xs mt-1">{department}</p>
 
       {/* View More Button */}
       <Link href={linkto}>
-        <button className="mt-3 w-full py-2 text-sm bg-teal-600 text-white font-medium rounded-md hover:bg-teal-700 transition">
+        <button className="mt-3 w-full py-2 text-sm bg-sky-950 text-white font-medium rounded-md hover:bg-teal-700 transition">
           View More
         </button>
       </Link>

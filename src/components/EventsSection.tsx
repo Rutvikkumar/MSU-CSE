@@ -86,7 +86,7 @@ const EventsSection = () => {
             See All Events &rarr;
           </div>
         </div>
-        <div className="flex flex-col space-y-4 overflow-y-auto max-h-[400px]">
+        <div className="flex flex-col space-y-4 overflow-y-auto max-h-[400px] p-4 rounded-lg">
           {events.map((event) => (
             <div key={event.id} className="bg-white p-4 rounded-lg shadow-lg">
               <div className="flex items-center">

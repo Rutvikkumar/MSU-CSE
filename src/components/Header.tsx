@@ -1,6 +1,6 @@
 "use client"
 import { JSX, useState } from "react";
-import { FaHome, FaBook, FaNewspaper, FaUsers, FaEnvelope, FaInfoCircle } from "react-icons/fa";
+import { FaHome, FaBook, FaNewspaper, FaUsers, FaEnvelope, FaInfoCircle,FaLightbulb } from "react-icons/fa";
 
 interface MenuItem {
   name: string;
@@ -10,7 +10,8 @@ interface MenuItem {
 
 const menuItems: MenuItem[] = [
   { name: "Home", icon: <FaHome />, links: [] },
-  { name: "Courses", icon: <FaBook />, links: ["Basic Computer", "Tally Prime", "Hacking"] },
+  { name: "Courses", icon: <FaBook />, links: ["Bacherlor of Engineering", "Master Of Computer Application", "Ph.D"] },
+  { name: "Clubs", icon: <FaLightbulb />, links: ["Neuralize", "Code Vimarsh", "Dev Infinity"] },
   { name: "News", icon: <FaNewspaper />, links: ["Latest News", "Events"] },
   { name: "Staff", icon: <FaUsers />, links: ["Teacing", "Non-Teaching","Administrive Staff","Office Staff"]},
   { name: "Contact", icon: <FaEnvelope />, links: ["Email", "Phone", "WhatsApp"] },
