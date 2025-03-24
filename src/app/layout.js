@@ -3,7 +3,8 @@ import { FaHome, FaBook, FaNewspaper, FaUsers, FaEnvelope, FaInfoCircle, FaFlask
 import { AiOutlineMail, AiOutlinePhone } from "react-icons/ai";
 import Link from "next/link";
 import "./globals.css";
-import Navbar from '../components/Header'
+import Navbar from '../components/Navbar'
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -108,28 +109,10 @@ const Footer = () => {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning> 
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-      {/* <header className="bg-white shadow-md">
-        <div className="max-w-6xl mx-auto py-3 px-8 flex items-center justify-between">
-          <a href="#">
-            <img className="w-36 h-16 hover:scale-105 transition-all bg-black" src="/MSU2.png" alt="College Logo"/>
-          </a>
-          <nav>
-            
-            <ul className="flex gap-3">
-              <NavLink href="/" icon={<FaHome />} text="Home" />
-              <NavLink href="#" icon={<FaBook />} text="Courses" />
-              <NavLink href="#" icon={<FaNewspaper />} text="News" />
-              <NavLink href="/staff" icon={<FaUsers />} text="Staff" />
-              <NavLink href="/contact" icon={<FaEnvelope />} text="Contact" />
-              <NavLink href="/about" icon={<FaInfoCircle />} text="About" />
-            </ul>
-          </nav>
-        </div>
-      </header> */}
       <Navbar/>
         {children}
       <Footer />
