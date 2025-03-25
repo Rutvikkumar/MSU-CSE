@@ -8,15 +8,14 @@ import MegaMenu from "./MegaMenu";
 
 const Navbar = () => {
     return (
-        <>
-
-            <div className="flex justify-between items-center px-20 py-5 bg-sky-950 ">
+    <>
+         <div className="flex justify-between items-center px-20 py-2 bg-sky-950 border-b-2 sticky top-0 left-0 right-0 z-50">
                 <div>
                     <Image
-                        src={"/msu_logo.png"}
+                        src={"/logo_msu.png"}
                         alt="Nike Logo"
-                        width={60}
-                        height={50}
+                        width={80}
+                        height={80}
                     />
                 </div>
                 <div className="flex gap-8 pr-6 text-white z-20 ">
@@ -32,10 +31,8 @@ const Navbar = () => {
                         </div>
                     ))}
                 </div>
-
-            </div>
-
-        </>
+          </div>
+      </>
     );
 };
 
