@@ -7,22 +7,19 @@ const Footer = () => {
 
   return (
     <footer className="bg-sky-950 text-white">
-      <div className="max-w-6xl mx-auto py-8 px-2">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-        
+      <div className="max-w-6xl mx-auto py-10 px-2">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-5">
           <div className="flex items-center justify-center md:justify-start">
             <Image
-              src={"/logo_msu.png"}
-              alt="Nike Logo"
-              width={200}
-              height={200}
+              src={"/footer-logo.png"}
+              alt="msu_logo"
+              width={250}
+              height={250}
             />
           </div>
-
-        
           <div>
             <h3 className="text-xl font-bold mb-4">Head Office Address</h3>
-            <address className="not-italic space-y-2">
+            <address className="not-italic space-y-1">
               <p>The M. S. University of Baroda,</p>
               <p>Pratapgunj,</p>
               <p>Vadodara, Gujarat-390002</p>
@@ -51,7 +48,7 @@ const Footer = () => {
       
           <div>
             <h3 className="text-xl font-bold mb-4">Useful Links</h3>
-            <ul className="space-y-2">
+            <ul className="space-y-1">
               <li><Link href="#" className="hover:text-blue-300">Admission</Link></li>
               <li><Link href="#" className="hover:text-blue-300">Examination</Link></li>
               <li><Link href="#" className="hover:text-blue-300">MSUB Digital</Link></li>
@@ -63,7 +60,7 @@ const Footer = () => {
         
           <div>
             <h3 className="text-xl font-bold mb-4">Head Office Working Hours</h3>
-            <div className="space-y-2">
+            <div className="space-y-1">
               <p><span className="font-semibold">Day:</span> Monday to Saturday</p>
               <p><span className="font-semibold">Time:</span> 10:30 am to 06:10 pm</p>
               <p><span className="font-semibold">Closed on:</span> 2nd and 4th Saturday, Sunday,<br />Government Approved Holidays</p>
