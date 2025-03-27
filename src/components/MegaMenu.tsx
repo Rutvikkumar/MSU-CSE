@@ -14,7 +14,7 @@ const MegaMenu = ({ product }: any) => {
             <h1 className="hover:opacity-50 text-white">{item.title}</h1>
             <div className="space-y-3">
               {item.items.map((item: any, i: number) => (
-                <p key={i} className="text-sm opacity-70 hover:opacity-100 text-white">
+                <p key={i} className="text-sm text-white">
                   {item}
                 </p>
               ))}

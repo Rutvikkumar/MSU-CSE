@@ -7,15 +7,16 @@ const courses = [
             <table className="table-auto w-full border-collapse border border-gray-300 mt-2">
                 <tbody>
                     <tr><td className="border px-4 py-2 font-semibold w-1/4">Program:</td><td className="border px-4 py-2">	Bachelor of Engineering in Computer Science and Engineering</td></tr>
-                    <tr><td className="border px-4 py-2 font-semibold">Details:</td><td className="border px-4 py-2">Admission for Professional Courses:
+                    <tr><td className="border px-4 py-2 font-semibold">Details:</td><td className="border px-4 py-2">
+                        Admission for Professional Courses:<br /> <br />
 
-                        1	:	To apply in UG/PG: ACPC Website
-                        2	:	Students who are admitted to First year Degree/ Diploma/ Postgraduate Courses (B.E./ B. Arch./ B. Pharm./ Dip. /M.E./ MURP/ M. Pharm./ MCA/ MBA) through Admission Committee for Professional Courses (ACPC)/ Admission Committee for Professional Diploma Courses (ACPDC)/ AICTE/ PMSSS/ Govt. nominee etc. should report (within the stipulated time specified by the Admission Committee) to the office of the faculty/ institute in which he/she is admitted, submit the Admission Letter issued by the Admission Committee and Register on MSUIS Website to get enrolled in The Maharaja Sayajirao University of Baroda.
-                        3	:	They must register in the branch that is allotted to him/her by ACPC/ACPDC and not in any other branch of his/her choice. Such registrations, if made, will not be considered for their enrolment.
-                        4	:	Permanent Registration Number (PRN) will be alloted only after:
-                        i : Verification with ACPC/ACPDC Admission List
-                        ii: Verification of Certificates and payment of the stipulated fees of The Maharaja Sayajirao University of Baroda For Diploma to Degree/
-                        iii:Certificate to Diploma (Second year Lateral Admission) admitted students, please register on MSUIS Website
+                        1	:	To apply in UG/PG: ACPC Website <br />
+                        2	:	Students who are admitted to First year Degree/ Diploma/ Postgraduate Courses (B.E./ B. Arch./ B. Pharm./ Dip. /M.E./ MURP/ M. Pharm./ MCA/ MBA) through Admission Committee for Professional Courses (ACPC)/ Admission Committee for Professional Diploma Courses (ACPDC)/ AICTE/ PMSSS/ Govt. nominee etc. should report (within the stipulated time specified by the Admission Committee) to the office of the faculty/ institute in which he/she is admitted, submit the Admission Letter issued by the Admission Committee and Register on MSUIS Website to get enrolled in The Maharaja Sayajirao University of Baroda. <br />
+                        3	:	They must register in the branch that is allotted to him/her by ACPC/ACPDC and not in any other branch of his/her choice. Such registrations, if made, will not be considered for their enrolment. <br />
+                        4	:	Permanent Registration Number (PRN) will be alloted only after: 
+                        i : Verification with ACPC/ACPDC Admission List <br />
+                        ii: Verification of Certificates and payment of the stipulated fees of The Maharaja Sayajirao University of Baroda For Diploma to Degree/ <br />
+                        iii:Certificate to Diploma (Second year Lateral Admission) admitted students, please register on MSUIS Website <br />
                         5	:	For Diploma to Degree/ Certificate to Diploma (Second year Lateral Admission) admitted students, please register on MSUIS Website.</td></tr>
                     <tr><td className="border px-4 py-2 font-semibold">Program level:</td><td className="border px-4 py-2">Through ACPC Portal</td></tr>
                     <tr><td className="border px-4 py-2 font-semibold">Program mode:(Open Category)</td><td className="border px-4 py-2">10+2 Science with min 45%</td></tr>
@@ -78,8 +79,7 @@ const courses = [
                 <tr>
                     <td className="border px-4 py-2 font-semibold">Eligibility criteria:</td>
                     <td className="border px-4 py-2">
-
-                        Eligibility Group :	:	Bachelor's degree-Reserved category
+                        Eligibility Group :	:	Bachelor's degree-Reserved category <br />
                         Required Qualification:	:	Under Graduate Degree(UG)
                         Specialisation(If Any):	:	Any
                         Min Percentage:	:	45
@@ -212,7 +212,7 @@ export default function CourseTabs() {
                     activeTab === course.id && (
                         <div key={course.id}>
                             <h2 className="text-xl font-bold mb-2">{course.title}</h2>
-                            <p className="text-gray-700">{course.description}</p>
+                            <div className="text-gray-700">{course.description}</div>
                         </div>
                     )
                 ))}
