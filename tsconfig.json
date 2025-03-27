@@ -23,6 +23,6 @@
       "public/*":["./public"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/clubs/page.tsx", "src/app/syllabus/[course].jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/clubs/page.tsx", "src/app/syllabus/[course].jsx", "src/app/news/page.jsx"],
   "exclude": ["node_modules"]
 }

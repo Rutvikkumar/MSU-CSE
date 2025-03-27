@@ -80,10 +80,10 @@ export default function Main() {
       <main>
         <section style={bgStyle} className="relative">
           <div className="p-8 rounded-lg max-w-2xl text-center mx-4">
-            <h1 className="text-5xl font-bold text-blue-900 mb-4">
+            <h1 className="text-5xl font-bold text-slate-50 mb-4">
               {backgroundData[index].title}
             </h1>
-            <p className="text-sky-950 text-xl">{backgroundData[index].body}</p>
+            <p className="text-slate-50 text-xl">{backgroundData[index].body}</p>
           </div>
         </section>
 
@@ -233,120 +233,9 @@ const FacultiesSection = () => {
   );
 };
 
-// Latest News Section
-const LatestNews = () => {
-  const newsItems = [
-    {
-      title: "New Engineering Program Launched",
-      date: "2023-10-15",
-      excerpt:
-        "We're excited to announce our new AI and Robotics engineering program.",
-    },
-    {
-      title: "College Fest 2023",
-      date: "2023-11-01",
-      excerpt:
-        "Join us for our annual cultural fest with exciting events and competitions.",
-    },
-    {
-      title: "Research Grant Awarded",
-      date: "2023-09-20",
-      excerpt:
-        "Our faculty received a $1M grant for renewable energy research.",
-    },
-  ];
 
-  return (
-    <section className="bg-gradient-to-b from-blue-50 to-blue-100 py-16 px-8">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl font-bold text-blue-900 mb-8">Latest News</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {newsItems.map((item, index) => (
-            <div
-              key={index}
-              className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 border border-blue-100"
-            >
-              <h3 className="text-xl font-semibold text-blue-900 mb-2">
-                {item.title}
-              </h3>
-              <p className="text-gray-600 text-sm mb-4">
-                {new Date(item.date).toDateString()}
-              </p>
-              <p className="text-gray-700">{item.excerpt}</p>
-              <button className="mt-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors">
-                Read More
-              </button>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-};
 
 // NavLink Component
-const NavLink = ({ href, icon, text }) => (
-  <li>
-    <Link
-      href={href}
-      className="flex items-center text-xl py-3 px-4 hover:bg-blue-600 hover:text-white transition-all rounded text-gray-700"
-    >
-      {icon}
-      <span className="ml-2">{text}</span>
-    </Link>
-  </li>
-);
 
-const ResearchSection = () => {
-  const researchHighlights = [
-    {
-      title: "AI and Machine Learning",
-      description:
-        "Our researchers are working on cutting-edge AI technologies to solve real-world problems.",
-      image: "https://picsum.photos/id/1060/400/300",
-    },
-    {
-      title: "Renewable Energy",
-      description:
-        "We are developing sustainable energy solutions to combat climate change.",
-      image: "https://picsum.photos/id/107/400/300",
-    },
-    {
-      title: "Biotechnology",
-      description:
-        "Our biotech research focuses on advancements in healthcare and agriculture.",
-      image: "https://picsum.photos/id/1036/400/300",
-    },
-  ];
 
-  return (
-    <section className="bg-gradient-to-b from-blue-50 to-blue-100 py-16 px-8">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl font-bold text-blue-900 mb-8 pb-2 border-b-4 border-blue-600 inline-block">
-          Research at Our College
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {researchHighlights.map((research, index) => (
-            <div
-              key={index}
-              className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
-            >
-              <img
-                src={research.image}
-                alt={research.title}
-                className="w-full h-48 object-cover rounded-lg mb-4"
-              />
-              <h3 className="text-xl font-semibold text-blue-900 mb-2">
-                {research.title}
-              </h3>
-              <p className="text-gray-700">{research.description}</p>
-              <button className="mt-4 bg-sky-950 text-white px-4 py-2 rounded hover:bg-sky-700 transition-colors">
-                Learn More
-              </button>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-};
+

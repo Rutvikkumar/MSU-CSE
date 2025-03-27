@@ -26,24 +26,6 @@ const events = [
   
 ];
 
-// const latestNews = [
-//   {
-//     id: 1,
-//     title: "New Technology Advancements in Education",
-//     link: "#",
-//   },
-//   {
-//     id: 2,
-//     title: "Upcoming College Festivals Announced",
-//     link: "#",
-//   },
-//   {
-//     id: 3,
-//     title: "Student Achievements in Global Competitions",
-//     link: "#",
-//   },
-// ];
-
 
 const latestNews = [
   {
@@ -119,23 +101,7 @@ const EventsSection = () => {
             See All News &rarr;
           </div>
         </div>
-        {/* <div className="flex flex-col space-y-4 overflow-y-auto max-h-[400px]">
-          {latestNews.map((news) => (
-            <div key={news.id} className="bg-white p-4 rounded-lg shadow-md">
-              <h3 className="font-semibold">{news.title}</h3>
-              <h3 className="font-semibold">Date</h3>
-              <h3 className="font-semibold">NewsPaper</h3>
-              <h3 className="font-semibold">Edition</h3>
-              <div
-                onClick={() => window.location.href = news.link}
-                className="text-teal-600 hover:underline cursor-pointer"
-              >
-                Read More &rarr;
-              </div>
-            </div>
-          ))}
-        </div> */}
-
+  
 <div className="flex flex-col space-y-6 overflow-y-auto max-h-[400px] p-4 rounded-lg">
       {latestNews.map((news) => (
         <div
