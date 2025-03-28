@@ -24,31 +24,21 @@ export const Item = [
                 title: "BE",
                 href: "/be",
                 items: [
-                    "New Releases",
-                    "Bestsellers",
-                    "Member Exclusive",
-                    "Jordan",
+                    "....",
                 ]
             },
             {
                 title: "BCA",
                 href: "/bca",
                 items: [
-                    "All Jordan",
-                    "New Jordan",
-                    "Jordan Shoes",
-                    "Jordan Clothing",
-
+                    ".....",
                 ]
             },
             {
                 title: "Ph.d",
                 href: "/phd",
                 items: [
-                    "All Shoes",
-                    "Newest Sneakers",
-                    "Jordan",
-                    "Lifestyle",
+                    "......",
                 ]
             },
         ]
@@ -63,30 +53,29 @@ export const Item = [
                 href: "/be",
                 items: [
                     "Sem1",
-                    "Bestsellers",
-                    "Member Exclusive",
-                    "Jordan",
+                    "Sem2",
+                    "Sem3",
+                    "Sem4",
+                    "Sem5",
                 ]
             },
             {
                 title: "BCA",
                 href: "/bca",
                 items: [
-                    "All Jordan",
-                    "New Jordan",
-                    "Jordan Shoes",
-                    "Jordan Clothing",
-
+                    "Sem1",
+                    "Sem2",
+                    "Sem3",
                 ]
             },
             {
                 title: "Ph.d",
                 href: "/phd",
                 items: [
-                    "All Shoes",
-                    "Newest Sneakers",
-                    "Jordan",
-                    "Lifestyle",
+                    "Sem1",
+                    "Sem2",
+                    "Sem3",
+                    "Sem4",
                 ]
             },
         ]
@@ -100,33 +89,25 @@ export const Item = [
                 title: "Neuralize",
                 href: "/neuralize",
                 items: [
-                    "New Releases",
-                    "Bestsellers",
-                    "Member Exclusive",
-                    "Jordan",
-
+                    "UpComing Events",
+                    "Events",
                 ]
             },
             {
                 title: "Code Vimarsh",
                 href: "/code-vimarsh",
                 items: [
-                    "All Shoes",
-                    "Newest Sneakers",
-                    "Platform Sneakers",
-                    "Lifestyle",
-                    "Jordan",
-
+                    "UpComing Events",
+                    "Events",
                 ]
             },
             {
                 title: "Dev Infinity",
                 href: "/dev-infinity",
                 items: [
-                    "All Clothing",
-                    "Performance Essentials",
-
-                ]
+                    "UpComing Events",
+                    "Events",
+               ]
             },
         ]
     },
@@ -140,42 +121,6 @@ export const Item = [
         category: "Contact",
         href: "/contact",
         icon: <Contact className="w-5 h-5" />,
-        product: [
-            {
-                title: "Sale",
-                href: "/sale",
-                items: [
-                    "Shop All Sale",
-                    "Shoes Sale",
-                    "Clothing Sale",
-                    "Accesories and Equipment Sale",
-                ]
-            },
-            {
-                title: "Men's Sale",
-                href: "/mens-sale",
-                items: [
-                    "Shoes",
-                    "Clothing",
-                ]
-            },
-            {
-                title: "Women's Sale",
-                href: "/womens-sale",
-                items: [
-                    "Shoes",
-                    "Clothing",
-                ]
-            },
-            {
-                title: "Kids's Sale",
-                href: "/kidss-sale",
-                items: [
-                    "Shoes",
-                    "Clothing",
-                ]
-            },
-        ]
     },
     {
         category: "About",

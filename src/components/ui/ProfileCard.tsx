@@ -25,8 +25,7 @@ const ProfileCard: React.FC<ProfileCardProps> = ( { imageUrl, name, department,p
         />
       </div>
     </Link>
-
-    {/* Content Section */}
+    
     <div className="p-3 text-center">
       <h3 className="text-lg font-semibold text-sky-950 truncate">{name}</h3>
       <p className="text-black text-sm font-medium">{profession}</p>

@@ -33,25 +33,25 @@ const facultyMembers = [
     name: "Dr. Apurva Shah",
     designation: "Professor, Computer Science",
     expertise: "Operating System,Microprosessors",
-    image: "staff/Apurva-M-Shah.jpg",
+    image: "staff/dhanesh_patel.jpg",
   },
   {
     name: "Dr. Hetal Bhavsar",
     designation: "Associate Professor, Computer Science",
     expertise: "Compiler Design",
-    image: "staff/hetal-bravser.png",
+    image: "staff/profile.jpg",
   },
   {
     name: "Dr. Anjali Jivani",
     designation: "Associate Professor, Computer Science",
     expertise: "Database Management System",
-    image: "staff/Anjali-G-jivani.jpg",
+    image: "staff/profile.jpg",
   },
   {
-    name: "Dr Mamta Padole",
-    designation: "Associate Professor,Computer Science",
-    expertise: "Java, Distributed System",
-    image: "staff/mamta-padole.jpg",
+    name: "Dr. Apurva Shah",
+    designation: "Professor, Computer Science",
+    expertise: "Operating System,Microprosessors",
+    image: "staff/Apurva-M-Shah.jpg",
   },
 ];
 
@@ -89,7 +89,7 @@ export default function Main() {
 
         <CollegeDescription />
 
-        <CollegeStats />
+        {/* <CollegeStats /> */}
 
         <FacultiesSection />
 
@@ -232,10 +232,5 @@ const FacultiesSection = () => {
     </section>
   );
 };
-
-
-
-// NavLink Component
-
 
 
