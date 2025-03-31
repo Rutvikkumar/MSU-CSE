@@ -9,6 +9,9 @@ import {
   FaChalkboardTeacher,
 } from "react-icons/fa";
 import News from "../components/EventsSection";
+import MessageCards from "../components/MessageCards";
+import CourseCard from "../components/CourseCard";
+import FeedbackCard from "../components/FeedbackCard"
 
 const backgroundData = [
   {
@@ -83,7 +86,9 @@ export default function Main() {
             <h1 className="text-5xl font-bold text-slate-50 mb-4">
               {backgroundData[index].title}
             </h1>
-            <p className="text-slate-50 text-xl">{backgroundData[index].body}</p>
+            <p className="text-slate-50 text-xl">
+              {backgroundData[index].body}
+            </p>
           </div>
         </section>
 
@@ -91,10 +96,15 @@ export default function Main() {
 
         {/* <CollegeStats /> */}
 
+        <CourseCard />
+
         <FacultiesSection />
 
-        <News />
+        <MessageCards />
 
+        <FeedbackCard/>
+
+        <News />
       </main>
     </>
   );
@@ -119,7 +129,7 @@ const CollegeDescription = () => (
             dyeing. Prof. T. K. Gajjar was the first Principle of KBTI who built
             it with passion.
           </p>
-      
+
           <Link
             href="/about"
             className="inline-block bg-sky-950 text-white px-6 py-3 rounded-lg hover:bg-sky-700 transition-colors"
@@ -232,5 +242,3 @@ const FacultiesSection = () => {
     </section>
   );
 };
-
-

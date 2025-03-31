@@ -42,22 +42,16 @@ const EventsPage = () => {
         photos: ['https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=300&q=80', 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=300&q=80'],
         featured: true
       },
-    // ... more events
   ]);
-
-  // Available categories
   const categories = [
     'Seminar', 'Cultural', 'Sports', 'Celebration', 'Webinar',
     'Competition', 'Workshop', 'Lecture/Talk', 'Conference',
     'Exhibition', 'Visit', 'STTP', 'FDP', 'Symposium',
     'Student Event', 'Festival'
   ];
-
-  // Get unique years from event data (newest first)
   const years = [...new Set(eventData.map(item => new Date(item.date).getFullYear()))]
     .sort((a, b) => b - a);
 
-  // Filter events based on selections
   const filteredEvents = eventData.filter(event => {
     const eventDate = new Date(event.date);
     const eventYear = eventDate.getFullYear();
@@ -70,10 +64,7 @@ const EventsPage = () => {
     );
   });
 
-  // Featured events (optional)
   const featuredEvents = eventData.filter(event => event.featured);
-
-  // Format date
   const formatDate = (dateString) => {
     return new Date(dateString).toLocaleDateString('en-US', {
       year: 'numeric',
@@ -81,15 +72,12 @@ const EventsPage = () => {
       day: 'numeric'
     });
   };
-
-  // Clear all filters
   const clearFilters = () => {
     setSelectedCategory('');
     setYearFilter('');
     setMonthFilter('');
   };
 
-  // Photo gallery navigation
   const navigatePhotos = (direction) => {
     const currentEvent = eventData.find(e => e.id === showPhotosForEvent);
     if (!currentEvent) return;
@@ -105,7 +93,7 @@ const EventsPage = () => {
     }
   };
 
-  // Close photo gallery
+  
   const closeGallery = () => {
     setShowPhotosForEvent(null);
     setCurrentPhotoIndex(0);
