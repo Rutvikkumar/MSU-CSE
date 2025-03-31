@@ -5,6 +5,9 @@ import {
   Users,
   Contact,
   Info,
+  BriefcaseIcon,
+  UserCheckIcon,
+  MedalIcon,
   Bookmark,
   UserCircle,
 } from "lucide-react";
@@ -62,17 +65,17 @@ export const Item = [
   {
     category: "Placement",
     href: "/staff",
-    icon: <UserCircle className="w-5 h-5" />,
+    icon: <BriefcaseIcon className="w-5 h-5" />,
   },
   {
     category: "Alumni",
     href: "/contact",
-    icon: <Contact className="w-5 h-5" />,
+    icon: <UserCheckIcon className="w-5 h-5" />,
   },
   {
     category: "Accreditations & Rankinkg",
     href: "/about",
-    icon: <Info className="w-5 h-5" />,
+    icon: <MedalIcon className="w-5 h-5" />,
   },
   {
     category: "About Us",
