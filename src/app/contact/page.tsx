@@ -1,46 +1,74 @@
-import React from 'react'
-import { Mail, Phone } from "lucide-react";
+import React from "react";
+import { FaFacebook, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
 
-function page() {
+const ContactCard: React.FC = () => {
+  return (
+    <div className="container mx-auto px-6 py-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 border border-gray-300 p-8 rounded-lg shadow-md">
+        {/* Contact Details */}
+        <div>
+          <h2 className="text-xl font-bold mb-3">Contact Details</h2>
+          <hr className="w-20 border-b-2 border-teal-500 mb-5" />
+          <p className="font-bold">SEMCOM</p>
+          <p>Opp. Shastri Ground</p>
+          <p>Vallabh Vidyanagar - 388 120</p>
+          <p>GUJARAT, INDIA</p>
+          <p className="flex items-center mt-3">
+            📞 <span className="ml-2">(+91) 6352135360</span>
+          </p>
+          <p className="flex items-center mt-2">
+            ✉️ <span className="ml-2">principal.semcom@cvmu.edu.in</span>
+          </p>
+          <p className="flex items-center mt-2">
+            ⏰ <span className="ml-2">Monday to Saturday: 9:00 AM to 4:30 PM</span>
+          </p>
 
-    const contacts = [
-        {
-          name: "Prof. (Dr.) Apurva M. Shah",
-          designation: "Head of Department",
-          address: ".,-",
-          phone: "0265-2434188 Ext 202",
-          email: "head-cse@msubaroda.ac.in",
-        },
-      
-      ];
-
-    return (
-        <div className="flex justify-center items-center min-h-screen bg-gray-50">
-            <div className="container mx-auto px-4 py-10">
-                <h1 className="text-3xl font-bold text-center mb-8">Our Faculty</h1>
-                <div className="grid md:grid-cols-3 gap-6">
-                    {contacts.map((contact, index) => (
-                        <div key={index} className="max-w-sm bg-gray-100 shadow-md rounded-lg p-6 border border-gray-300">
-                            <h2 className="text-lg font-bold text-blue-600">{contact.name}</h2>
-                            <p className="font-semibold mt-2">Designation: <span className="font-normal">{contact.designation}</span></p>
-                            <p className="font-semibold mt-1">Address: <span className="font-normal">{contact.address}</span></p>
-                            <div className="mt-4 flex flex-col gap-2">
-                                <p className="flex items-center gap-2 text-gray-700">
-                                    <Phone size={18} /> {contact.phone}
-                                </p>
-                                <p className="flex items-center gap-2 text-gray-700">
-                                    <Mail size={18} /> <a href={`mailto:${contact.email}`} className="text-blue-600 hover:underline">
-                                        {contact.email}
-                                    </a>
-                                </p>
-                            </div>
-                            <div className="mt-4 border-t border-blue-600"></div>
-                        </div>
-                    ))}
-                </div>
-            </div>
+          {/* Social Icons */}
+          <div className="flex space-x-4 mt-4">
+            <FaFacebook className="text-gray-700 cursor-pointer text-2xl" />
+            <FaInstagram className="text-gray-700 cursor-pointer text-2xl" />
+            <FaTwitter className="text-gray-700 cursor-pointer text-2xl" />
+            <FaYoutube className="text-gray-700 cursor-pointer text-2xl" />
+          </div>
         </div>
-    );
-}
 
-export default page
+        {/* Important Contacts */}
+        <div>
+          <h2 className="text-xl font-bold mb-3">Important Contacts</h2>
+          <hr className="w-20 border-b-2 border-teal-500 mb-5" />
+          <p>
+            <strong>Education Verification/Transcript</strong>
+            <br />
+            studentsupport.semcom@cvmu.edu.in
+          </p>
+          <p className="mt-4">
+            <strong>Admissions</strong>
+            <br />
+            Dr. Renil Thomas: 9898203575
+            <br />
+            renil.thomas@cvmu.edu.in
+          </p>
+          <p className="mt-4">
+            <strong>Placement</strong>
+            <br />
+            renil.thomas@cvmu.edu.in
+          </p>
+          <p className="mt-4">
+            <strong>Accommodation</strong>
+            <br />
+            Boys Hostel: chetanbhai.patel@cvmu.edu.in
+            <br />
+            Girls Hostel: khyati.patel@cvmu.edu.in
+          </p>
+          <p className="mt-4">
+            <strong>SMTR (A UGC CARE Listed Journal)</strong>
+            <br />
+            publication.fcml@cvmu.edu.in
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default ContactCard;

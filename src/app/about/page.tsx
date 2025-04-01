@@ -22,63 +22,50 @@ export default function About() {
       <section className="bg-gradient-to-b from-blue-50 to-blue-100 py-16 px-8">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-blue-900 mb-8">
-            About Our University
+            Department of Computer Science and Engineering:
           </h2>
           <p>
-            The Faculty of Technology and Engineering as its stands today was
-            formed along with the establishment of The Maharaja Sayajirao
-            University in 1949. It is an outgrowth of what was popularly known
-            as the Kala Bhavan Technical Institute (KBTI) established in June
-            1890 by late His Highness The Maharaja Sayajirao Gaekwad III of
-            Baroda State. Initially the idea was to teach drawing, bleaching,
-            dyeing, calico printing and carpentry, thus starting the School of
-            Weaving in the year 1897 which subsequently expanded to a course on
-            dyeing. Prof. T. K. Gajjar was the first Principle of KBTI who built
-            it with passion.
+            The Maharaja Sayajirao University was the first in the State of
+            Gujarat to offer a Bachelor of Engineering Course in Computer
+            Science and Engineering: BE(CSE) in the year 1982 and a
+            Post-graduate three year Master of Computer Applications (MCA)
+            course in the year 1984. Initially both the courses BE(CSE) and MCA
+            were conducted under Electrical Engineering Department. In 1987
+            Department of Computer Science and Engineering was established as an
+            independent department. Ph.D (CSE) started in the year 2004. Since
+            2020 the MCA course is now offered for 2 year duration with an
+            intake of 45 students.
           </p>
           <p>
-            Post Indian Independence, since 1949, the continued academic growth
-            resulted in the creation of 14 departments, a huge workshop, a
-            library and several buildings which were possible due to the
-            financial support from various government organizations like UGC,
-            MHRD, DST, AICTE and financial aid from UNDP, USAID, etc. and due to
-            the dedicated efforts by the University, Deans and Teachers of the
-            University. Located on an area of 17 acres, the Faculty of
-            Technology & Engineering boasts of a heritage structure, spacious
-            class rooms and modern state of art laboratories. The total number
-            of academic programes across the 14 departments is 45 including the
-            undergraduate (BE), post graduate (ME) & applied science (MSc). The
-            BE program is among the most sought after in the State of Gujarat.
-            Apart from these degree programs, all departments offer PhD degrees
-            with guiding faculty from reputed Institutes of India. Recognizing
-            the teaching and the academic standards of the Faculty, various
-            private industries and also Government of Gujarat have instituted
-            Centres of Excellence in the Faculty. These are the Siemens Centre
-            for Industrial Automation, Anchor Institute for Textile Engineering,
-            Centre of Excellence in Polymers and Centre of Excellence in
-            Industrial Mathematics.
+            It has been the endeavor of the department to bring excellence in
+            every aspect of development and growth of departmental facilities
+            both in teaching and extra-curricular activities. The main focus of
+            the department is on strengthening UG/PG teaching, research in
+            thrust areas and improving the infrastructure, which has resulted in
+            reaching high degree of acceptance of students by IT industry
+            reflecting almost 100%placement through campus recruitment.
           </p>
           <p>
-            The Training and Placement office of the Faculty facilitates the
-            employment of the graduates and post graduates of the Faculty. Apart
-            from pursuing academics the students of the Faculty are active in
-            other spheres of human life. 'Footprints" is the largest technical
-            extravaganza of Gujarat and is organized every year since more than
-            a decade. This technical event is entirely organized by the budding
-            engineers encouraging them to think beyond the closed classroom
-            teaching. On the other hand "Paramarsh" is the largest non-technical
-            event in the State of Gujarat. "Paramarsh" aims at installing
-            qualities like "leadership", 'spirit of adventure', 'team spirit"
-            among other qualities essential to build an all round personality of
-            the students. One of the unique events organized by the students is
-            'Prerna" , a social event organized at the National level to
-            showcase the abilities of the differently abled students.
+            The MSU Computer Alumni Association was started in the year 1998 and
+            became very active and dynamic in the year 2012. Since then, the
+            alumni association has continued to assist the department in the
+            development of infrastructure, renovation and activities related to
+            the growth and progress of the students.
           </p>
           <p>
-            With a strong teaching and research faculty, the Faculty of
-            Technology & Engineering looks ahead to the future with a strong
-            sense of confidence to emerge as one of the best places to pursue
-            engineering or applied science studies and research in the country.
+            Most of the Professors of the department hold Ph.D. degrees and are
+            associated with NBA, NAAC, UGC CARE, UGC NET and UGC Standing
+            Committee for Computer Centre and MCA course, AICTE Committees,
+            Selection Committees of teaching staff etc., in several capacities.
+          </p>
+          <p>
+            The Department is affiliated with other national level technical
+            bodies like Computer Society of India (CSI), Institute of Engineers
+            (IE), Institute of Electronics and Telecommunication Engineers
+            (IETE) and Indira Gandhi National Open University (IGNOU). In
+            collaboration with CSI, the department has been organizing several
+            workshops, seminars and technical talks. The department is one of
+            the major exam centers for the CCC+ exam of the Govt. of Gujarat.
           </p>
         </div>
       </section>

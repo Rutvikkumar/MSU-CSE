@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 const CourseCard = ({ title, level, duration, icon, color, link }) => {
@@ -34,7 +35,7 @@ const HomePageCourses = () => {
       duration: '4 Years',
       icon: '🎓',
       color: 'border-blue-500',
-      link: '/programs/be',
+      link: '/courses',
     },
     {
       title: 'MCA',
@@ -42,7 +43,7 @@ const HomePageCourses = () => {
       duration: '2 Years',
       icon: '💻',
       color: 'border-green-500',
-      link: '/programs/mca',
+      link: '/courses',
     },
     {
       title: 'PhD',
@@ -50,7 +51,7 @@ const HomePageCourses = () => {
       duration: '3-5 Years',
       icon: '🔬',
       color: 'border-purple-500',
-      link: '/programs/phd',
+      link: '/courses',
     },
   ];
 
@@ -68,12 +69,12 @@ const HomePageCourses = () => {
         </div>
 
         <div className="text-center mt-10">
-          <a
-            href="/programs"
+          <Link
+            href="/courses"
             className="inline-block px-6 py-3 bg-blue-600 text-white text-sm font-semibold rounded-full shadow-md hover:bg-blue-700 transition duration-300"
           >
             🚀 Explore All Programs
-          </a>
+          </Link>
         </div>
       </div>
     </section>

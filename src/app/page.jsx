@@ -72,7 +72,7 @@ export default function Main() {
     backgroundImage: `url(${backgroundData[index].url})`,
     backgroundPosition: "center",
     backgroundSize: "cover",
-    minHeight: "100vh",
+    minHeight: "86vh",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",

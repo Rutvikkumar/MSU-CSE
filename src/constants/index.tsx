@@ -130,7 +130,7 @@ export const Item = [
       },
       {
         title: "Facilities",
-        href: "/code-vimarsh",
+        href: "/facilities",
       },
       {
         title: "Mega Event",
@@ -152,16 +152,16 @@ export const Item = [
   },
   {
     category: "Placement",
-    href: "/staff",
+    href: "/placement",
     icon: <BriefcaseIcon className="w-5 h-5" />,
     product: [
       {
         title: "Internship and Placemanet",
-        href: "/neuralize",
+        href: "/placement",
       },
       {
         title: "Company Detail",
-        href: "/code-vimarsh",
+        href: "/company",
       },
       {
         title: "MOU",
@@ -175,20 +175,16 @@ export const Item = [
   },
   {
     category: "Alumni",
-    href: "/contact",
+    href: "/alumni",
     icon: <UserCheckIcon className="w-5 h-5" />,
     product: [
       {
         title: "MSU Alumni",
-        href: "/neuralize",
+        href: "/alumni",
       },
       {
         title: "Alumni Registration form",
         href: "/code-vimarsh",
-      },
-      {
-        title: "Dev Infinity",
-        href: "/dev-infinity",
       },
     ],
   },
@@ -203,15 +199,19 @@ export const Item = [
       },
       {
         title: "Dream, Vision, Mission",
-        href: "/About",
+        href: "/about",
       },
       {
         title: "About Vadodra",
-        href: "/dev-infinity",
+        href: "/about/aboutcity",
       },
       {
         title: "Faculty Team",
         href: "/staff",
+      },
+      {
+        title: "Contact",
+        href: "/contact",
       },
     ],
   },
