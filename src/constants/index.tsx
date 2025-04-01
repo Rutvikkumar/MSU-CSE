@@ -121,7 +121,7 @@ export const Item = [
   },
   {
     category: "Student Corner",
-    href: "/clubs",
+    href: "/",
     icon: <Users className="w-5 h-5" />,
     product: [
       {
@@ -147,6 +147,10 @@ export const Item = [
       {
         title: "DownLoadable Form",
         href: "/dev-infinity",
+      },
+      {
+        title: "Clubs",
+        href: "/clubs",
       },
     ],
   },
