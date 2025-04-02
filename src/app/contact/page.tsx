@@ -9,15 +9,15 @@ const ContactCard: React.FC = () => {
         <div>
           <h2 className="text-xl font-bold mb-3">Contact Details</h2>
           <hr className="w-20 border-b-2 border-teal-500 mb-5" />
-          <p className="font-bold">SEMCOM</p>
-          <p>Opp. Shastri Ground</p>
-          <p>Vallabh Vidyanagar - 388 120</p>
-          <p>GUJARAT, INDIA</p>
+          <p className="font-bold">Computer Science and Engineering</p>
+          <p>.....</p>
+          <p>.....</p>
+          <p>.....</p>
           <p className="flex items-center mt-3">
             📞 <span className="ml-2">(+91) 6352135360</span>
           </p>
           <p className="flex items-center mt-2">
-            ✉️ <span className="ml-2">principal.semcom@cvmu.edu.in</span>
+            ✉️ <span className="ml-2">principal.msu@cvmu.edu.in</span>
           </p>
           <p className="flex items-center mt-2">
             ⏰ <span className="ml-2">Monday to Saturday: 9:00 AM to 4:30 PM</span>
@@ -39,7 +39,7 @@ const ContactCard: React.FC = () => {
           <p>
             <strong>Education Verification/Transcript</strong>
             <br />
-            studentsupport.semcom@cvmu.edu.in
+            studentsupport...email
           </p>
           <p className="mt-4">
             <strong>Admissions</strong>
