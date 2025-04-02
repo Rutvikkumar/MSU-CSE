@@ -107,15 +107,15 @@ export const Item = [
     product: [
       {
         title: "BE",
-        href: "/courses",
+        href: "/be",
       },
       {
         title: "BCA",
-        href: "/courses",
+        href: "/bca",
       },
       {
         title: "Ph.d",
-        href: "/courses",
+        href: "/phd",
       },
     ],
   },
@@ -173,11 +173,11 @@ export const Item = [
       },
       {
         title: "MOU",
-        href: "/dev-infinity",
+        href: "/placement/contact",
       },
       {
         title: "Contact Placement Office",
-        href: "/dev-infinity",
+        href: "/placement/contact",
       },
     ],
   },
@@ -192,7 +192,7 @@ export const Item = [
       },
       {
         title: "Alumni Registration form",
-        href: "/",
+        href: "/code-vimarsh",
       },
     ],
   },
