@@ -173,7 +173,7 @@ export const Item = [
       },
       {
         title: "MOU",
-        href: "/placement/contact",
+        href: "/placement/mou",
       },
       {
         title: "Contact Placement Office",
