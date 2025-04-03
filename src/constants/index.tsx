@@ -88,10 +88,16 @@ import {
   Home,
   GraduationCap,
   Users,
-  BriefcaseIcon,
-  UserCheckIcon,
-  MedalIcon,
+  Briefcase,
+  UserCircle,
+  Award,
   Info,
+  BookOpen,
+  ShieldCheck,
+  Mail,
+  Linkedin,
+  Instagram,
+  Facebook,
 } from "lucide-react";
 
 export const Item = [
@@ -101,75 +107,161 @@ export const Item = [
     icon: <Home className="w-5 h-5" />,
   },
   {
+    category: "About Us",
+    href: "/about",
+    icon: <Info className="w-5 h-5" />,
+    product: [
+      {
+        title: "CSE Department",
+        href: "/about/department",
+      },
+      {
+        title: "Dream, Vision, and Mission",
+        href: "/about/vision-mission",
+      },
+      {
+        title: "Message from HoD",
+        href: "/about/hod-message",
+      },
+      {
+        title: "CSE in News",
+        href: "/about/news",
+      },
+      {
+        title: "Faculty of Technology and Engineering",
+        href: "/about/faculty",
+      },
+      {
+        title: "The M. S. University",
+        href: "/about/msu",
+      },
+      {
+        title: "The Vadodara City",
+        href: "/about/city",
+      },
+      {
+        title: "Faculty Team",
+        href: "/about/faculty-team",
+      },
+      {
+        title: "IQAC",
+        href: "/about/iqac",
+      },
+      {
+        title: "AICTE",
+        href: "/about/aicte",
+      },
+      {
+        title: "Accreditations and Rankings",
+        href: "/about/accreditations",
+      },
+      {
+        title: "Cells and Committees",
+        href: "/about/committees",
+      },
+    ],
+  },
+  {
     category: "Academics",
-    href: "/courses",
+    href: "/academics",
     icon: <GraduationCap className="w-5 h-5" />,
     product: [
       {
-        title: "BE",
-        href: "/be",
+        title: "BE (CSE)",
+        href: "/academics/be",
       },
       {
-        title: "BCA",
-        href: "/bca",
+        title: "MCA",
+        href: "/academics/mca",
       },
       {
-        title: "Ph.d",
-        href: "/phd",
+        title: "Ph.D. (CSE)",
+        href: "/academics/phd",
+      },
+    ],
+  },
+  {
+    category: "Research & Consultancy",
+    href: "/research",
+    icon: <BookOpen className="w-5 h-5" />,
+    product: [
+      {
+        title: "Ph.D. Program",
+        href: "/research/phd-program",
+      },
+      {
+        title: "List of Research Supervisors",
+        href: "/research/supervisors",
+      },
+      {
+        title: "List of Research Scholars",
+        href: "/research/scholars",
+      },
+      {
+        title: "TechoCSE E-Newsletter",
+        href: "/research/newsletter",
       },
     ],
   },
   {
     category: "Student Corner",
-    href: "/",
+    href: "/students",
     icon: <Users className="w-5 h-5" />,
     product: [
       {
-        title: "Student Council 2024-25 ",
-        href: "/neuralize",
+        title: "Life @CSE Department",
+        href: "/students/life",
       },
       {
-        title: "Facilities",
-        href: "/facilities",
+        title: "Department Facilities",
+        href: "/students/facilities",
       },
       {
-        title: "Mega Event",
-        href: "/dev-infinity",
+        title: "Central Facilities",
+        href: "/students/central-facilities",
       },
       {
-        title: "Extention Activities",
-        href: "/dev-infinity",
+        title: "Events & Activities",
+        href: "/students/events",
       },
       {
-        title: "Important Links",
-        href: "/dev-infinity",
-      },
-      {
-        title: "DownLoadable Form",
-        href: "/dev-infinity",
-      },
-      {
-        title: "Clubs",
-        href: "/clubs",
+        title: "Gallery",
+        href: "/students/gallery",
       },
       {
         title: "Syllabus",
-        href: "/syllabus",
+        href: "/students/syllabus",
+      },
+      {
+        title: "Students Club",
+        href: "/students/club",
+      },
+      {
+        title: "Students Committees",
+        href: "/students/committees",
+      },
+      {
+        title: "Important Links",
+        href: "/students/links",
+      },
+      {
+        title: "Downloadable Forms",
+        href: "/students/forms",
       },
     ],
   },
   {
     category: "Placement",
     href: "/placement",
-    icon: <BriefcaseIcon className="w-5 h-5" />,
+    icon: <Briefcase className="w-5 h-5" />,
     product: [
       {
-        title: "Internship and Placemanet",
+        title: "Internship and Placement",
         href: "/placement",
       },
       {
         title: "Company Detail",
-        href: "/company",
+        href: "/placement/companies",
       },
       {
         title: "MOU",
@@ -184,48 +276,74 @@ export const Item = [
   {
     category: "Alumni",
     href: "/alumni",
-    icon: <UserCheckIcon className="w-5 h-5" />,
+    icon: <UserCircle className="w-5 h-5" />,
     product: [
       {
-        title: "MSU Alumni",
+        title: "CSE Alumni",
         href: "/alumni",
       },
       {
-        title: "Alumni Registration form",
-        href: "/code-vimarsh",
+        title: "Alumni Registration Form",
+        href: "/alumni/registration",
+      },
+      {
+        title: "Reach us with LinkedIn Page",
+        href: "/alumni/linkedin",
       },
     ],
   },
   {
-    category: "About Us",
-    href: "/about",
-    icon: <Info className="w-5 h-5" />,
+    category: "Accreditations & Rankings",
+    href: "/accreditations",
+    icon: <ShieldCheck className="w-5 h-5" />,
     product: [
       {
-        title: "About MSU",
-        href: "/about",
+        title: "NAAC",
+        href: "/accreditations/naac",
       },
       {
-        title: "Dream, Vision, Mission",
-        href: "/about",
+        title: "NBA",
+        href: "/accreditations/nba",
       },
       {
-        title: "About Vadodra",
-        href: "/about/aboutcity",
+        title: "NIRF",
+        href: "/accreditations/nirf",
       },
-      {
-        title: "Faculty Team",
-        href: "/staff",
-      },
+    ],
+  },
+  {
+    category: "Reach Us",
+    href: "/contact",
+    icon: <Mail className="w-5 h-5" />,
+    product: [
       {
         title: "Contact",
         href: "/contact",
       },
+      {
+        title: "Media Kit",
+        href: "/contact/media",
+      },
+      {
+        title: "Education Verification",
+        href: "/contact/verification",
+      },
+      {
+        title: "Connect with us on LinkedIn",
+        href: "/contact/linkedin",
+      },
+      {
+        title: "Connect with us on Instagram",
+        href: "/contact/instagram",
+      },
+      {
+        title: "Connect with us on Facebook",
+        href: "/contact/facebook",
+      },
+      {
+        title: "Connect with us on LinkedIn (Alumni Page)",
+        href: "/contact/alumni-linkedin",
+      },
     ],
-  },
-  {
-    category: "Accreditations & Rankinkg",
-    href: "/about",
-    icon: <MedalIcon className="w-5 h-5" />,
   },
 ];

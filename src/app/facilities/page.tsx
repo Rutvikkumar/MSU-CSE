@@ -1,153 +1,58 @@
-"use client"
-import { useState } from 'react';
+// app/Facilities/page.tsx
+'use client';
 
-const Facilities = () => {
-  const [activeTab, setActiveTab] = useState('Auditorium');
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { Suspense } from 'react';
+import DepartmentContent from './department-facilities/page';
+import CentralContent from './centeral-facilities/page';
 
+export default function FacilitiesTabs() {
+  const pathname = usePathname();
+  
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold text-center mb-6">Facilities</h1>
+    <div className="container mx-auto p-4">
+      <h1 className="text-2xl font-bold mb-8 text-center">Facilities</h1>
       
-      {/* Tab Navigation */}
-      <div className="flex space-x-4 mb-6 border-b border-gray-300">
-        <button
-          className={`px-4 py-2 text-lg ${activeTab === 'Auditorium' ? 'border-b-2 border-blue-500 font-semibold' : ''}`}
-          onClick={() => setActiveTab('Auditorium')}
-        >
-          Auditorium
-        </button>
-        <button
-          className={`px-4 py-2 text-lg ${activeTab === 'Boys Hostel' ? 'border-b-2 border-blue-500 font-semibold' : ''}`}
-          onClick={() => setActiveTab('Boys Hostel')}
-        >
-          Boys Hostel
-        </button>
-        <button
-          className={`px-4 py-2 text-lg ${activeTab === 'Girls Hostel' ? 'border-b-2 border-blue-500 font-semibold' : ''}`}
-          onClick={() => setActiveTab('Girls Hostel')}
-        >
-          Girls Hostel
-        </button>
-        <button
-          className={`px-4 py-2 text-lg ${activeTab === 'Sports Facility' ? 'border-b-2 border-blue-500 font-semibold' : ''}`}
-          onClick={() => setActiveTab('Sports Facility')}
-        >
-          Sports Facility
-        </button>
-        <button
-          className={`px-4 py-2 text-lg ${activeTab === 'Class Rooms' ? 'border-b-2 border-blue-500 font-semibold' : ''}`}
-          onClick={() => setActiveTab('Class Rooms')}
-        >
-          Class Rooms
-        </button>
-        <button
-          className={`px-4 py-2 text-lg ${activeTab === 'Information Technology Centre' ? 'border-b-2 border-blue-500 font-semibold' : ''}`}
-          onClick={() => setActiveTab('Information Technology Centre')}
-        >
-          Information Technology Centre
-        </button>
-        <button
-          className={`px-4 py-2 text-lg ${activeTab === 'Human Resource Development Center' ? 'border-b-2 border-blue-500 font-semibold' : ''}`}
-          onClick={() => setActiveTab('Human Resource Development Center')}
-        >
-          HR Development Centre
-        </button>
+      {/* Centered Tabs */}
+      <div className="flex justify-center mb-8">
+        <div className="flex border-b">
+          <Link
+            href="/facilities/department-facilities"
+            className={`px-6 py-3 font-medium ${
+              pathname.includes('department') 
+                ? 'border-b-2 border-blue-500 text-blue-600' 
+                : 'text-gray-500'
+            }`}
+          >
+            Department Facilities
+          </Link>
+          <Link
+            href="/Facilities/Centeral-Facilities"
+            className={`px-6 py-3 font-medium ${
+              pathname.includes('Centeral') 
+                ? 'border-b-2 border-blue-500 text-blue-600' 
+                : 'text-gray-500'
+            }`}
+          >
+            Central Facilities
+          </Link>
+        </div>
       </div>
 
-      {/* Tab Content */}
-      {activeTab === 'Auditorium' && (
-        <div>
-          <img
-            src="/auditorium.jpg"  // Save the image in public folder and use the appropriate path
-            alt="Auditorium"
-            className="w-full h-auto object-cover rounded-md mb-4"
-          />
-          <p className="text-lg">
-            College has an excellent Air-Conditioned Auditorium with a capacity of 170 seats.
-            The auditorium is equipped with a multimedia projector, Dolby sound system, and an Audio-Visual recording system.
-          </p>
-        </div>
-      )}
-      
-      {activeTab === 'Boys Hostel' && (
-        <div>
-          <img
-            src="/boys-hostel.jpg"
-            alt="Boys Hostel"
-            className="w-full h-auto object-cover rounded-md mb-4"
-          />
-          <p className="text-lg">
-            The Boys Hostel is spacious and provides a comfortable stay with all essential facilities including Wi-Fi, 24/7 security, and hygienic food.
-          </p>
-        </div>
-      )}
-      
-      {activeTab === 'Girls Hostel' && (
-        <div>
-          <img
-            src="/girls-hostel.jpg"
-            alt="Girls Hostel"
-            className="w-full h-auto object-cover rounded-md mb-4"
-          />
-          <p className="text-lg">
-            The Girls Hostel is well-equipped with safe and comfortable rooms, providing a peaceful environment for students.
-          </p>
-        </div>
-      )}
-      
-      {activeTab === 'Sports Facility' && (
-        <div>
-          <img
-            src="/sports-facility.jpg"
-            alt="Sports Facility"
-            className="w-full h-auto object-cover rounded-md mb-4"
-          />
-          <p className="text-lg">
-            Our sports facilities include a full-sized basketball court, badminton courts, and a well-maintained gymnasium.
-          </p>
-        </div>
-      )}
-
-      {activeTab === 'Class Rooms' && (
-        <div>
-          <img
-            src="/classrooms.jpg"
-            alt="Class Rooms"
-            className="w-full h-auto object-cover rounded-md mb-4"
-          />
-          <p className="text-lg">
-            The classrooms are modern, air-conditioned, and equipped with smart boards and audio-visual aids for enhanced learning.
-          </p>
-        </div>
-      )}
-
-      {activeTab === 'Information Technology Centre' && (
-        <div>
-          <img
-            src="/it-center.jpg"
-            alt="IT Centre"
-            className="w-full h-auto object-cover rounded-md mb-4"
-          />
-          <p className="text-lg">
-            The IT Centre is equipped with the latest computers and software to provide students with hands-on experience in various technologies.
-          </p>
-        </div>
-      )}
-
-      {activeTab === 'Human Resource Development Center' && (
-        <div>
-          <img
-            src="/hrd-center.jpg"
-            alt="HR Development Centre"
-            className="w-full h-auto object-cover rounded-md mb-4"
-          />
-          <p className="text-lg">
-            The HR Development Center focuses on developing soft skills, leadership, and teamwork to prepare students for the corporate world.
-          </p>
-        </div>
-      )}
+      {/* Dynamic Content Below Tabs */}
+      <div className="max-w-4xl mx-auto">
+        {pathname.includes('department') && (
+          <Suspense fallback={<div>Loading department...</div>}>
+            <DepartmentContent />
+          </Suspense>
+        )}
+        {pathname.includes('Centeral') && (
+          <Suspense fallback={<div>Loading central...</div>}>
+            <CentralContent />
+          </Suspense>
+        )}
+      </div>
     </div>
   );
-};
-
-export default Facilities;
+}
