@@ -63,14 +63,14 @@ const Navbar = () => {
             </div>
 
             {/* Navigation Links */}
-            <div className="flex gap-6 pr-6 text-white z-20">
+            <div className="flex gap-6 text-white z-20">
                 {Item.map((item) => (
                     <div key={item.category} className="group relative">
                         <Link
                             href={item.href}
                             className="text-lg font-semibold py-1 hover:border-b-[3px] border-white flex items-center gap-1"
                         >
-                            {item.icon}
+
                             {item.category}
                         </Link>
                         {/* Mega Menu for Products */}
