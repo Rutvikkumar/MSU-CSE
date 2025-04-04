@@ -28,3 +28,18 @@ export type Program = {
       description: string;
     };
   };
+
+  export type AboutSection = {
+    id: string;
+    title: string;
+    description: string;
+    link: string;
+    icon?: React.ReactNode;
+  };
+  
+  export type DepartmentInfo = {
+    established: number;
+    location: string;
+    facilities: string[];
+    achievements: string[];
+  };
