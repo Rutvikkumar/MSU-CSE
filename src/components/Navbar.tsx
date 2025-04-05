@@ -63,7 +63,7 @@ const Navbar = () => {
             </div>
 
             {/* Navigation Links */}
-            <div className="flex gap-6 text-white z-20">
+            <div className="flex gap-3 text-white z-20">
                 {Item.map((item) => (
                     <div key={item.category} className="group relative">
                         <Link
