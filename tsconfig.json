@@ -23,6 +23,6 @@
       "public/*":["./public"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/clubs/page.tsx", "src/app/syllabus/[course].jsx", "src/app/news/page.jsx", "src/components/MessageCards.jsx", "src/components/DropdownMenu.jsx", "src/components/CourseCard.jsx", "src/app/facilities/page.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/clubs/page.tsx", "src/app/syllabus/[course].jsx", "src/app/news/page.jsx", "src/components/MessageCards.jsx", "src/components/DropdownMenu.jsx", "src/components/CourseCard.jsx", "src/app/facilities/page.tsx", "src/app/about/cse-department/page.jsx"],
   "exclude": ["node_modules"]
 }
