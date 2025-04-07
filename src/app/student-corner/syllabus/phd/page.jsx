@@ -2,20 +2,20 @@
 
 import Link from "next/link";
 
-const MCA = () => {
+const PhD = () => {
   const syllabus = {
-    "2015-2018": ["Sem 1", "Sem 2", "Sem 3", "Sem 4"],
-    "2018-2022": ["Sem 1", "Sem 2", "Sem 3", "Sem 4"],
-    "2022-2025": ["Sem 1", "Sem 2", "Sem 3", "Sem 4"],
+    "2015-2018": ["Year 1", "Year 2", "Year 3"],
+    "2018-2022": ["Year 1", "Year 2", "Year 3"],
+    "2022-2025": ["Year 1", "Year 2", "Year 3"],
   };
 
   return (
     <div className="min-h-screen bg-gray-50 p-8">
-      <Link href="/test" className="text-blue-600 hover:underline">
+      <Link href="/student-corner/syllabus" className="text-blue-600 hover:underline">
         ← Back to Home
       </Link>
       <h1 className="text-3xl font-bold text-center my-6 text-blue-800">
-        MCA Syllabus
+        PhD Syllabus
       </h1>
 
       <div className="max-w-4xl mx-auto space-y-8">
@@ -30,7 +30,7 @@ const MCA = () => {
                   <h3 className="font-medium">{sem}</h3>
                   <div className="flex gap-2 mt-2">
                     <a
-                      href={`/syllabus/MCA/${years}/${sem}.pdf`}
+                      href={`/syllabus/PhD/${years}/${sem}.pdf`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="px-3 py-1 bg-blue-100 text-blue-700 rounded hover:bg-blue-200 text-sm"
@@ -38,7 +38,7 @@ const MCA = () => {
                       View
                     </a>
                     <a
-                      href={`/syllabus/MCA/${years}/${sem}.pdf`}
+                      href={`/syllabus/PhD/${years}/${sem}.pdf`}
                       download
                       className="px-3 py-1 bg-green-100 text-green-700 rounded hover:bg-green-200 text-sm"
                     >
@@ -55,4 +55,4 @@ const MCA = () => {
   );
 };
 
-export default MCA;
+export default PhD;

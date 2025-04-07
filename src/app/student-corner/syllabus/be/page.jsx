@@ -11,7 +11,7 @@ const BE = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 p-8">
-      <Link href="/test" className="text-blue-600 hover:underline">
+      <Link href="student-corner/syllabus" className="text-blue-600 hover:underline">
         ← Back to Home
       </Link>
       <h1 className="text-3xl font-bold text-center my-6 text-blue-800">
