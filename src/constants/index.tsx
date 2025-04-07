@@ -113,11 +113,11 @@ export const Item = [
     product: [
       {
         title: "CSE Department",
-        href: "/about/department",
+        href: "/about/cse-department",
       },
       {
         title: "Dream, Vision, and Mission",
-        href: "/about/vision-mission",
+        href: "/about/dream-vision-mission",
       },
       {
         title: "Message from HoD",
@@ -125,19 +125,19 @@ export const Item = [
       },
       {
         title: "CSE in News",
-        href: "/about/news",
+        href: "/about/cse-in-news",
       },
       {
         title: "Faculty of Technology and Engineering",
-        href: "/about/faculty",
+        href: "/about/faculty-technology-engineering",
       },
       {
         title: "The M. S. University",
-        href: "/about/msu",
+        href: "/about/msu-university",
       },
       {
         title: "The Vadodara City",
-        href: "/about/city",
+        href: "/about/vadodara-city",
       },
       {
         title: "Faculty Team",
@@ -153,11 +153,11 @@ export const Item = [
       },
       {
         title: "Accreditations and Rankings",
-        href: "/about/accreditations",
+        href: "/about/accreditations-rankings",
       },
       {
         title: "Cells and Committees",
-        href: "/about/committees",
+        href: "/about/cells-committees",
       },
     ],
   },
@@ -168,7 +168,7 @@ export const Item = [
     product: [
       {
         title: "BE (CSE)",
-        href: "/academics/be",
+        href: "/academics/be-cse",
       },
       {
         title: "MCA",
@@ -176,77 +176,77 @@ export const Item = [
       },
       {
         title: "Ph.D. (CSE)",
-        href: "/academics/phd",
+        href: "/academics/phd-cse",
       },
     ],
   },
   {
     category: "Research & Consultancy",
-    href: "/research",
+    href: "/research-consultancy",
     icon: <BookOpen className="w-5 h-5" />,
     product: [
       {
         title: "Ph.D. Program",
-        href: "/research/phd-program",
+        href: "/research-consultancy/phd-program",
       },
       {
         title: "List of Research Supervisors",
-        href: "/research/supervisors",
+        href: "/research-consultancy/research-supervisors",
       },
       {
         title: "List of Research Scholars",
-        href: "/research/scholars",
+        href: "/research-consultancy/research-scholars",
       },
       {
         title: "TechoCSE E-Newsletter",
-        href: "/research/newsletter",
+        href: "/research-consultancy/technocse-newsletter",
       },
     ],
   },
   {
     category: "Student Corner",
-    href: "/students",
+    href: "/student-corner",
     icon: <Users className="w-5 h-5" />,
     product: [
       {
         title: "Life @CSE Department",
-        href: "/students/life",
+        href: "/student-corner/life-at-cse",
       },
       {
         title: "Department Facilities",
-        href: "/students/facilities",
+        href: "/student-corner/department-facilities",
       },
       {
         title: "Central Facilities",
-        href: "/students/central-facilities",
+        href: "/student-corner/central-facilities",
       },
       {
         title: "Events & Activities",
-        href: "/students/events",
+        href: "/student-corner/events-activities",
       },
       {
         title: "Gallery",
-        href: "/students/gallery",
+        href: "/student-corner/gallery",
       },
       {
         title: "Syllabus",
-        href: "/students/syllabus",
+        href: "/student-corner/syllabus",
       },
       {
         title: "Students Club",
-        href: "/students/club",
+        href: "/student-corner/students-club",
       },
       {
         title: "Students Committees",
-        href: "/students/committees",
+        href: "/student-corner/students-committees",
       },
       {
         title: "Important Links",
-        href: "/students/links",
+        href: "/student-corner/important-links",
       },
       {
         title: "Downloadable Forms",
-        href: "/students/forms",
+        href: "/student-corner/downloadable-forms",
       },
     ],
   },
@@ -257,11 +257,11 @@ export const Item = [
     product: [
       {
         title: "Internship and Placement",
-        href: "/placement",
+        href: "/placement/internship-placement",
       },
       {
         title: "Company Detail",
-        href: "/placement/companies",
+        href: "/placement/company-detail",
       },
       {
         title: "MOU",
@@ -269,7 +269,7 @@ export const Item = [
       },
       {
         title: "Contact Placement Office",
-        href: "/placement/contact",
+        href: "/placement/contact-placement-office",
       },
     ],
   },
@@ -280,69 +280,69 @@ export const Item = [
     product: [
       {
         title: "CSE Alumni",
-        href: "/alumni",
+        href: "/alumni/cse-alumni",
       },
       {
         title: "Alumni Registration Form",
-        href: "/alumni/registration",
+        href: "/alumni/alumni-registration",
       },
       {
         title: "Reach us with LinkedIn Page",
-        href: "/alumni/linkedin",
+        href: "/alumni/reach-us-linkedin",
       },
     ],
   },
   {
     category: "Accreditations & Rankings",
-    href: "/accreditations",
+    href: "/accreditations-rankings",
     icon: <ShieldCheck className="w-5 h-5" />,
     product: [
       {
         title: "NAAC",
-        href: "/accreditations/naac",
+        href: "/accreditations-rankings/naac",
       },
       {
         title: "NBA",
-        href: "/accreditations/nba",
+        href: "/accreditations-rankings/nba",
       },
       {
         title: "NIRF",
-        href: "/accreditations/nirf",
+        href: "/accreditations-rankings/nirf",
       },
     ],
   },
   {
     category: "Reach Us",
-    href: "/contact",
+    href: "/reach-us",
     icon: <Mail className="w-5 h-5" />,
     product: [
       {
         title: "Contact",
-        href: "/contact",
+        href: "/reach-us/contact",
       },
       {
         title: "Media Kit",
-        href: "/contact/media",
+        href: "/reach-us/media-kit",
       },
       {
         title: "Education Verification",
-        href: "/contact/verification",
+        href: "/reach-us/education-verification",
       },
       {
         title: "Connect with us on LinkedIn",
-        href: "/contact/linkedin",
+        href: "/reach-us/linkedin",
       },
       {
         title: "Connect with us on Instagram",
-        href: "/contact/instagram",
+        href: "/reach-us/instagram",
       },
       {
         title: "Connect with us on Facebook",
-        href: "/contact/facebook",
+        href: "/reach-us/facebook",
       },
       {
         title: "Connect with us on LinkedIn (Alumni Page)",
-        href: "/contact/alumni-linkedin",
+        href: "/reach-us/linkedin-alumni",
       },
     ],
   },

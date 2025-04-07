@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import ProfileCard from "../../components/ui/ProfileCard";
+import ProfileCard from "@/components/ui/ProfileCard";
 import EventsSection from "@/components/EventsSection";
 
 export default function Staff() {
