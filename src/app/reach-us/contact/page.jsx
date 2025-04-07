@@ -1,7 +1,7 @@
 import React from "react";
 import { FaFacebook, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
 
-const ContactCard: React.FC = () => {
+const ContactCard = () => {
   return (
     <div className="container mx-auto px-6 py-12">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 border border-gray-300 p-8 rounded-lg shadow-md">

@@ -1,16 +1,10 @@
-// app/companies/page.tsx
+// app/companies/page.jsx
 "use client";
 
 import { useState } from "react";
 import Image from "next/image";
 
-type Company = {
-  id: number;
-  name: string;
-  logo?: string;
-};
-
-const companies: Company[] = [
+const companies = [
   {
     id: 1,
     name: "Google",
@@ -55,7 +49,7 @@ const companies: Company[] = [
 
 export default function CompaniesPage() {
   const [searchTerm, setSearchTerm] = useState("");
-  const [sortOrder, setSortOrder] = useState<"asc" | "desc">("asc");
+  const [sortOrder, setSortOrder] = useState("asc");
 
   const filteredCompanies = companies.filter((company) =>
     company.name.toLowerCase().includes(searchTerm.toLowerCase())
@@ -90,7 +84,7 @@ export default function CompaniesPage() {
           <select
             className="text-sm px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
             value={sortOrder}
-            onChange={(e) => setSortOrder(e.target.value as "asc" | "desc")}
+            onChange={(e) => setSortOrder(e.target.value)}
           >
             <option value="asc">A-Z</option>
             <option value="desc">Z-A</option>

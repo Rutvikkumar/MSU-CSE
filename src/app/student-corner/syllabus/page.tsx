@@ -3,9 +3,9 @@ import React from "react";
 import Link from "next/link";
 
 const syllabusData = [
-  { title: "BE", description: "Bachelor of Engineering syllabus overview", link: "/syllabus/be" },
-  { title: "MCA", description: "Master of Computer Applications syllabus details", link: "/syllabus/mca" },
-  { title: "PhD", description: "Doctorate syllabus structure", link: "/syllabus/phd" },
+  { title: "BE", description: "Bachelor of Engineering syllabus overview", link: "/student-corner/syllabus/be" },
+  { title: "MCA", description: "Master of Computer Applications syllabus details", link: "/student-corner/syllabus/mca" },
+  { title: "PhD", description: "Doctorate syllabus structure", link: "/student-corner/syllabus/phd" },
 ];
 
 const SyllabusCards = () => {
