@@ -7,44 +7,30 @@ import Image from "next/image";
 const companies = [
   {
     id: 1,
-    name: "Google",
-    logo: "/logos/google.png",
+    name: "MasterCard",
+    logo: "/company-logo/mastercard.png",
   },
   {
     id: 2,
-    name: "Microsoft",
-    logo: "/logos/microsoft.png",
+    name: "Accenture",
+    logo: "/company-logo/accenture.jpg",
   },
   {
     id: 3,
-    name: "Amazon",
-    logo: "/logos/amazon.png",
+    name: "Infosys",
+    logo: "/company-logo/infosys.jpg",
   },
   {
     id: 4,
-    name: "Infosys",
-    logo: "/logos/infosys.png",
+    name: "Infodesk",
+    logo: "/company-logo/infodesk.jpg",
   },
   {
     id: 5,
-    name: "TCS",
-    logo: "/logos/tcs.png",
+    name: "Meditab",
+    logo: "/company-logo/meditab.png",
   },
-  {
-    id: 6,
-    name: "Wipro",
-    logo: "/logos/wipro.png",
-  },
-  {
-    id: 7,
-    name: "Accenture",
-    logo: "/logos/accenture.png",
-  },
-  {
-    id: 8,
-    name: "IBM",
-    logo: "/logos/ibm.png",
-  },
+
 ];
 
 export default function CompaniesPage() {

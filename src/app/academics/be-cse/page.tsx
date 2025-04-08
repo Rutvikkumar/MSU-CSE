@@ -140,7 +140,7 @@ export default function BECSEPage() {
             Download Prospectus
           </a>
           <a
-            href="/syllabus/becse"  // Update this path to your actual syllabus path
+            href="/student-corner/syllabus/be"  // Update this path to your actual syllabus path
             className="px-6 py-3 border border-emerald-600 text-emerald-600 font-medium rounded-lg hover:bg-emerald-50 transition duration-300 text-center"
           >
             View Syllabus
