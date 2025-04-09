@@ -207,5 +207,4 @@ const DepartmentLife = () => {
     </div>
   );
 };
-
-export default DepartmentLife;
+export default DepartmentLife;          
