@@ -33,27 +33,23 @@ const backgroundData = [
 
 const facultyMembers = [
   {
-    name: "Dr. Apurva Shah",
-    designation: "Professor, Computer Science",
-    expertise: "Operating System,Microprosessors",
+    name: "Rajmata Shubhangini Raje Gaekwad",
+    designation: "Honorable Chancellor",
+    image: "staff/rajemata_shubhangini.jpg",
+  },
+  {
+    name: "Prof. (Dr.) Dhanesh Patel",
+    designation: "Honorable Vice-Chancellor",
     image: "staff/dhanesh_patel.jpg",
   },
   {
-    name: "Dr. Hetal Bhavsar",
-    designation: "Associate Professor, Computer Science",
-    expertise: "Compiler Design",
-    image: "staff/profile.jpg",
-  },
-  {
-    name: "Dr. Anjali Jivani",
-    designation: "Associate Professor, Computer Science",
-    expertise: "Database Management System",
-    image: "staff/profile.jpg",
+    name: "Prof. (Dr.) Dhanesh Patel",
+    designation: "Principal",
+    image: "staff/dhanesh_patel.jpg",
   },
   {
     name: "Dr. Apurva Shah",
-    designation: "Professor, Computer Science",
-    expertise: "Operating System,Microprosessors",
+    designation: "Head, Computer Science",
     image: "staff/Apurva-M-Shah.jpg",
   },
 ];

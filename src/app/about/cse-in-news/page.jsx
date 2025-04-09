@@ -1,5 +1,6 @@
 'use client';
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 // Sample news data with images
 const newsData = [
@@ -7,22 +8,29 @@ const newsData = [
     id: 1, 
     title: 'Department Seminar', 
     date: '2023-05-15', 
-    content: 'Join us for our monthly seminar featuring guest speaker Dr. Johnson discussing cutting-edge research in our field.', 
-    image: 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=300&q=80', // Replace with your actual image paths
-    category: 'Events'
+    content: 'Join us for our monthly seminar featuring guest speaker Dr. Johnson discussing cutting-edge research in our field.',
+    newsPaper: 'Science Times',
+    edition: 'May 2023 Edition',
+    image: 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=300&q=80',
+    category: 'Events',
+    fullContent: 'This is the full detailed content about the department seminar...' // Added for detail page
   },
   { 
     id: 2, 
     title: 'Research Grant Awarded', 
     date: '2023-06-20', 
-    content: 'Our team received a $2M research grant from the National Science Foundation for our work in renewable energy solutions.', 
+    content: 'Our team received a $2M research grant from the National Science Foundation for our work in renewable energy solutions.',
+    newsPaper: 'Research Weekly',
+    edition: 'Summer 2023 Special',
     image: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=300&q=80',
-    category: 'Achievements'
+    category: 'Achievements',
+    fullContent: 'This is the full detailed content about the research grant...' // Added for detail page
   },
   // ... other news items
 ];
 
 export default function NewsPage() {
+  const router = useRouter();
   const [yearFilter, setYearFilter] = useState('');
   const [monthFilter, setMonthFilter] = useState('');
 
@@ -53,6 +61,11 @@ export default function NewsPage() {
       month: 'long',
       day: 'numeric'
     });
+  };
+
+  // Handle read more click
+  const handleReadMore = (newsId) => {
+    router.push(`/about/cse-in-news/${newsId}`);
   };
 
   return (
@@ -161,9 +174,16 @@ export default function NewsPage() {
                         {formatDate(newsItem.date)}
                       </span>
                     </div>
+                    <div className="mt-2 text-sm text-gray-500">
+                      <p><span className="font-medium">News Paper:</span> {newsItem.newsPaper}</p>
+                      <p><span className="font-medium">Edition:</span> {newsItem.edition}</p>
+                    </div>
                     <p className="mt-2 text-gray-600">{newsItem.content}</p>
                   </div>
-                  <button className="mt-4 text-blue-600 hover:text-blue-800 font-medium self-start">
+                  <button 
+                    onClick={() => handleReadMore(newsItem.id)}
+                    className="mt-4 text-blue-600 hover:text-blue-800 font-medium self-start"
+                  >
                     Read more →
                   </button>
                 </div>

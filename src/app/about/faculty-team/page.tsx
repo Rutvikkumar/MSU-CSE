@@ -9,9 +9,9 @@ export default function Staff() {
 
   const tabs = [
     { id: "teaching", label: "Teaching" },
-    { id: "non-teaching", label: "Non-Teaching" },
-    { id: "administrative", label: "Administrative" },
-    { id: "office-staff", label: "Office Staff" },
+    // { id: "non-teaching", label: "Non-Teaching" },
+    // { id: "administrative", label: "Administrative" },
+    // { id: "office-staff", label: "Office Staff" },
   ];
 
   const getTabContent = () => {

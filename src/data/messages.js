@@ -12,9 +12,9 @@ export const messages = {
     ]
   },
   principal: {
-    name: "Dr. John Smith",
-    title: "College Principal",
-    image: "/staff/profile.jpg",
+    name: "Prof.(DR.)Apurva M Shah",
+    title: "Head of Computer Science",
+    image: "/staff/Apurva-M-shah.jpg",
     message: `Welcome to our esteemed institution. We aim to create in our students a cutting edge which will bring success in the emerging competitive world. Integrated development of students will not only help them in generating knowledge, acquiring skills, developing attitude but also help them...`,
     signature: "/images/principal-signature.png",
     achievements: [
@@ -24,9 +24,9 @@ export const messages = {
     ]
   },
   hod: {
-    name: "Prof. Jane Doe",
+    name: "Prof.(DR.)Apurva M Shah",
     title: "Head of Computer Science",
-    image: "/images/hod.jpg",
+    image: "/staff/Apurva-M-shah.jpg",
     message: `Greetings from the Computer Science Department. Our department is at the forefront of technological education, offering state-of-the-art facilities and a curriculum designed to meet industry needs...`,
     signature: "/images/hod-signature.png",
     achievements: [
