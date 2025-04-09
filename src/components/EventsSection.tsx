@@ -95,7 +95,7 @@ const EventsSection = () => {
         <div className="flex justify-between items-center mb-4">
           <h2 className="text-2xl font-bold">Latest News</h2>
           <div
-            onClick={() => window.location.href = "/news"}
+            onClick={() => window.location.href = "/about/cse-in-news"}
             className="text-sky-950 hover:underline cursor-pointer"
           >
             See All News &rarr;
