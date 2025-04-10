@@ -114,50 +114,61 @@ export const Item = [
       {
         title: "CSE Department",
         href: "/about/cse-department",
+
       },
       {
         title: "Dream, Vision, and Mission",
         href: "/about/dream-vision-mission",
+
       },
       {
         title: "Message from HoD",
         href: "/about/hod-message",
+
       },
       {
         title: "CSE in News",
         href: "/about/cse-in-news",
+
       },
       {
         title: "Faculty of Technology and Engineering",
         href: "/about/faculty-technology-engineering",
+
       },
       {
         title: "The M. S. University",
         href: "/about/msu-university",
+
       },
       {
         title: "The Vadodara City",
         href: "/about/vadodara-city",
+
       },
       {
         title: "Faculty Team",
         href: "/about/faculty-team",
+
       },
       {
         title: "IQAC",
-        href: "/about/iqac",
+        href: "/news-pdfs/news-1.pdf",
       },
       {
         title: "AICTE",
         href: "/about/aicte",
+
       },
       {
         title: "Accreditations and Rankings",
         href: "/about/accreditations-rankings",
+
       },
       {
         title: "Cells and Committees",
         href: "/about/cells-committees",
+
       },
     ],
   },
