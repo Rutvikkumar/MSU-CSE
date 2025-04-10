@@ -292,25 +292,25 @@ export const Item = [
       },
     ],
   },
-  {
-    category: "Accreditations & Rankings",
-    href: "/accreditations-rankings",
-    icon: <ShieldCheck className="w-5 h-5" />,
-    product: [
-      {
-        title: "NAAC",
-        href: "/accreditations-rankings/naac",
-      },
-      {
-        title: "NBA",
-        href: "/accreditations-rankings/nba",
-      },
-      {
-        title: "NIRF",
-        href: "/accreditations-rankings/nirf",
-      },
-    ],
-  },
+  // {
+  //   category: "Accreditations & Rankings",
+  //   href: "/accreditations-rankings",
+  //   icon: <ShieldCheck className="w-5 h-5" />,
+  //   product: [
+  //     {
+  //       title: "NAAC",
+  //       href: "/accreditations-rankings/naac",
+  //     },
+  //     {
+  //       title: "NBA",
+  //       href: "/accreditations-rankings/nba",
+  //     },
+  //     {
+  //       title: "NIRF",
+  //       href: "/accreditations-rankings/nirf",
+  //     },
+  //   ],
+  // },
   {
     category: "Reach Us",
     href: "/reach-us",
