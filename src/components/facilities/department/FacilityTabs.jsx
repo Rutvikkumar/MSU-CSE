@@ -5,6 +5,7 @@ import HostelInfo from './HostelInfo'
 import LabInfo from './LabInfo'
 import AuditoriumInfo from './AuditoriumInfo'
 import SmartClassesInfo from './SmartClassesInfo'
+import SeminarHall from './SeminarHall'
 
 const FacilityTabs = () => {
   const [activeTab, setActiveTab] = useState('hostel')
@@ -14,6 +15,7 @@ const FacilityTabs = () => {
     { id: 'lab', label: 'Computer Lab' },
     { id: 'auditorium', label: 'Auditorium' },
     { id: 'smartclasses', label: 'Smart Classes' },
+    { id: 'seminarhall', label: 'SeminarHall' },
   ]
 
   const renderTabContent = () => {
@@ -26,6 +28,8 @@ const FacilityTabs = () => {
         return <AuditoriumInfo />
       case 'smartclasses':
         return <SmartClassesInfo />
+        case 'seminarhall':
+        return <SeminarHall />
       default:
         return <HostelInfo />
     }

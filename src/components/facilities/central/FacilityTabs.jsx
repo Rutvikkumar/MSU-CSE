@@ -5,6 +5,7 @@ import HostelInfo from './HostelInfo'
 import LibraryInfo from './LibraryInfo'
 
 
+
 const FacilityTabs = () => {
   const [activeTab, setActiveTab] = useState('hostel')
 
@@ -12,14 +13,17 @@ const FacilityTabs = () => {
     { id: 'hostel', label: 'Hostel Facilities' },
     { id: 'library', label: 'Library' },
     
+    
+
+    
   ]
 
   const renderTabContent = () => {
     switch (activeTab) {
       case 'hostel':
         return <HostelInfo />
-      case 'lab':
-        return <LabInfo />
+      case 'seminarhall':
+        return <SeminarHall />
       case 'library':
         return <LibraryInfo />
       case 'auditorium':
