@@ -153,11 +153,11 @@ export const Item = [
       },
       {
         title: "IQAC",
-        href: "/news-pdfs/news-1.pdf",
+        href: "/blank.pdf",
       },
       {
         title: "AICTE",
-        href: "/about/aicte",
+        href: "/blank.pdf",
 
       },
       {
@@ -276,7 +276,7 @@ export const Item = [
       },
       {
         title: "MOU",
-        href: "/placement/mou",
+        href: "/blank.pdf",
       },
       {
         title: "Contact Placement Office",
