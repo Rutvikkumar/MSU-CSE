@@ -7,7 +7,7 @@ export default function About() {
       {/* Hero Image Section */}
       <section className="relative h-96">
         <img
-          src="https://picsum.photos/id/1060/1920/1080" // Replace with your university image
+          src="/techo-home.png" // Replace with your university image
           alt="University Campus"
           className="w-full h-full object-cover"
         />
@@ -78,36 +78,36 @@ export default function About() {
             {/* Masonry-like layout */}
             <div className="space-y-6">
               <img
-                src="https://picsum.photos/id/1040/400/600" // Tall image
+                src="/techo-home.png" // Tall image
                 alt="Campus Image 1"
                 className="w-full h-64 object-cover rounded-lg shadow-lg"
               />
               <img
-                src="https://picsum.photos/id/1041/400/300"
+                src="/techo-banner.png"
                 alt="Campus Image 2"
                 className="w-full h-48 object-cover rounded-lg shadow-lg"
               />
             </div>
             <div className="space-y-6">
               <img
-                src="https://picsum.photos/id/1042/400/400" // Square image
+                src="/collage/FTE-collage.png" // Square image
                 alt="Campus Image 3"
                 className="w-full h-64 object-cover rounded-lg shadow-lg"
               />
               <img
-                src="https://picsum.photos/id/1043/400/500" // Tall image
+                src="/collage/FTE-GATE.jpg" // Tall image
                 alt="Campus Image 4"
                 className="w-full h-64 object-cover rounded-lg shadow-lg"
               />
             </div>
             <div className="space-y-6">
               <img
-                src="https://picsum.photos/id/1044/400/300"
+                src="/collage/collage.jpg"
                 alt="Campus Image 5"
                 className="w-full h-48 object-cover rounded-lg shadow-lg"
               />
               <img
-                src="https://picsum.photos/id/1045/400/600" // Tall image
+                src="/collage/collage-nature.jpg" // Tall image
                 alt="Campus Image 6"
                 className="w-full h-64 object-cover rounded-lg shadow-lg"
               />

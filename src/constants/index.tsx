@@ -108,7 +108,7 @@ export const Item = [
   },
   {
     category: "About Us",
-    href: "/about",
+    href: "/",
     icon: <Info className="w-5 h-5" />,
     product: [
       {
@@ -349,7 +349,7 @@ export const Item = [
       },
       {
         title: "Connect with us on Facebook",
-        href: "/reach-us/facebook",
+        href: "/reach-us/www.facebook.com/TheMSUBaroda/",
       },
       {
         title: "Connect with us on LinkedIn (Alumni Page)",

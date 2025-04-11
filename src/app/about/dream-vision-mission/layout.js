@@ -5,7 +5,7 @@ export default function AboutLayout({ children }) {
   return (
     <>
       {/* Secondary Navbar */}
-     <header className="bg-blue-800 shadow-md">
+     <header className="bg-sky-950 shadow-md">
         <nav className="max-w-6xl mx-auto py-4 px-8">
           <ul className="flex justify-center gap-8">
             <li>
