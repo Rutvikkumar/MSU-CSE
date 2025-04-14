@@ -25,7 +25,6 @@ export async function getNewsList() {
     try {
       await dbConnect();
       const news = await News.find({}).sort({ date: -1 }).lean().exec();
-      console.log("nuews data in " , news);
       
       return news;
     } catch (error) {
