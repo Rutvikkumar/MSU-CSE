@@ -74,7 +74,7 @@ export default function AlumniRegistrationForm() {
     <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-3xl mx-auto bg-white rounded-xl shadow-md overflow-hidden p-8">
         <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-indigo-600">Alumni Registration</h1>
+          <h1 className="text-3xl font-bold text-sky-950">Alumni Registration</h1>
           <p className="mt-2 text-gray-600">
             Join our alumni network and stay connected with your alma mater
           </p>
@@ -378,7 +378,7 @@ export default function AlumniRegistrationForm() {
           <div className="pt-6">
             <button
               type="submit"
-              className="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+              className="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-sky-950 hover:bg-sky-950 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
             >
               Register as Alumni
             </button>
