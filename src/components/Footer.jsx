@@ -27,22 +27,48 @@ const Footer = () => {
               <p>info@msubaroda.ac.in</p>
               <p>www.msubaroda.ac.in</p>
               <div className="flex space-x-4 mt-4">
-                <a href="https://www.facebook.com/TheMSUBaroda/" aria-label="Facebook">
+                <a
+                  href="https://www.facebook.com/TheMSUBaroda/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook"
+                >
                   <FaFacebook className="text-2xl hover:text-blue-400" />
                 </a>
-                <a href="#" aria-label="Instagram">
+                <a
+                  href="https://www.instagram.com/themsubaroda/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                >
                   <FaInstagram className="text-2xl hover:text-blue-400" />
                 </a>
-                <a href="https://www.linkedin.com/in/themsubaroda" aria-label="Linkedin">
+                <a
+                  href="https://www.linkedin.com/in/themsubaroda"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Linkedin"
+                >
                   <FaLinkedin className="text-2xl hover:text-blue-400" />
                 </a>
-                <a href="https://www.instagram.com/themsubaroda/" aria-label="Twitter">
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Twitter"
+                >
                   <FaTwitter className="text-2xl hover:text-blue-400" />
                 </a>
-                <a href="https://www.youtube.com/c/TheMSUBaroda" aria-label="YouTube">
+                <a
+                  href="https://www.youtube.com/c/TheMSUBaroda"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="YouTube"
+                >
                   <FaYoutube className="text-2xl hover:text-blue-400" />
                 </a>
               </div>
+
             </address>
           </div>
 
