@@ -1,38 +1,33 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-
-// Sample news data with images
-const newsData = [
-  { 
-    id: 1, 
-    title: 'Department Seminar', 
-    date: '2023-05-15', 
-    content: 'Join us for our monthly seminar featuring guest speaker Dr. Johnson discussing cutting-edge research in our field.',
-    newsPaper: 'Science Times',
-    edition: 'May 2023 Edition',
-    image: 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=300&q=80',
-    category: 'Events',
-    fullContent: 'This is the full detailed content about the department seminar...' // Added for detail page
-  },
-  { 
-    id: 2, 
-    title: 'Research Grant Awarded', 
-    date: '2023-06-20', 
-    content: 'Our team received a $2M research grant from the National Science Foundation for our work in renewable energy solutions.',
-    newsPaper: 'Research Weekly',
-    edition: 'Summer 2023 Special',
-    image: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=300&q=80',
-    category: 'Achievements',
-    fullContent: 'This is the full detailed content about the research grant...' // Added for detail page
-  },
-  // ... other news items
-];
 
 export default function NewsPage() {
   const router = useRouter();
   const [yearFilter, setYearFilter] = useState('');
   const [monthFilter, setMonthFilter] = useState('');
+  const [newsData, setNewsData] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    async function fetchNews() {
+      try {
+        const response = await fetch('/api/admin/news');
+        if (!response.ok) {
+          throw new Error('Failed to fetch news');
+        }
+        const data = await response.json();
+        setNewsData(data);
+      } catch (error) {
+        console.error('Error fetching news:', error);
+        setError(error.message);
+      } finally {
+        setLoading(false);
+      }
+    }
+    fetchNews();
+  }, []);
 
   // Extract unique years from news data (sorted newest first)
   const years = [...new Set(newsData.map(item => new Date(item.date).getFullYear()))]
@@ -67,6 +62,31 @@ export default function NewsPage() {
   const handleReadMore = (newsId) => {
     router.push(`/about/cse-in-news/${newsId}`);
   };
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-gray-50 py-8 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
+          <div className="flex justify-center items-center h-64">
+            <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="min-h-screen bg-gray-50 py-8 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
+          <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+            <strong className="font-bold">Error: </strong>
+            <span className="block sm:inline">{error}</span>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gray-50 py-8 px-4 sm:px-6 lg:px-8">
@@ -149,7 +169,10 @@ export default function NewsPage() {
         <div className="grid gap-6 md:grid-cols-1">
           {filteredNews.length > 0 ? (
             filteredNews.map(newsItem => (
-              <div key={newsItem.id} className="bg-white overflow-hidden shadow rounded-lg flex flex-col md:flex-row hover:shadow-lg transition-shadow duration-300">
+              <div 
+                key={newsItem._id} 
+                className="bg-white overflow-hidden shadow rounded-lg flex flex-col md:flex-row hover:shadow-lg transition-shadow duration-300"
+              >
                 {/* Image on left side */}
                 <div className="w-full md:w-1/3 h-48 md:h-auto relative">
                   <img 
@@ -181,7 +204,7 @@ export default function NewsPage() {
                     <p className="mt-2 text-gray-600">{newsItem.content}</p>
                   </div>
                   <button 
-                    onClick={() => handleReadMore(newsItem.id)}
+                    onClick={() => handleReadMore(newsItem._id)} 
                     className="mt-4 text-blue-600 hover:text-blue-800 font-medium self-start"
                   >
                     Read more →
