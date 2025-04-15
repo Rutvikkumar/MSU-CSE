@@ -6,16 +6,37 @@ export default function NewsDetailPage({ params }) {
   const [newsItem, setNewsItem] = useState(null);
   const [loading, setLoading] = useState(true);
   const router = useRouter();
+  const { id } = params;
 
   useEffect(() => {
     async function fetchNewsItem() {
       try {
-        const response = await fetch(`/api/admin/news/${params.id}`);
+        const response = await fetch(`/api/admin/news/${id}`);
         if (!response.ok) {
           return notFound();
         }
         const data = await response.json();
-        setNewsItem(data);
+        console.log('API Response:', data);
+        
+        // Handle different response structures
+        let actualData = data;
+        
+        // Case 1: Data is nested under 'data' property
+        if (data && data.data) {
+          actualData = data.data;
+        } 
+        // Case 2: Data is in the root but has success property
+        else if (data && data.success) {
+          actualData = data;
+        }
+        
+        // Ensure required fields exist
+        if (!actualData.title || !actualData.fullContent) {
+          console.warn('Missing required fields in response:', actualData);
+          return notFound();
+        }
+        
+        setNewsItem(actualData);
       } catch (error) {
         console.error('Error fetching news item:', error);
         return notFound();
@@ -23,8 +44,11 @@ export default function NewsDetailPage({ params }) {
         setLoading(false);
       }
     }
-    fetchNewsItem();
-  }, [params.id]);
+    
+    if (id) {
+      fetchNewsItem();
+    }
+  }, [id]);
 
   if (loading) {
     return (
@@ -45,7 +69,6 @@ export default function NewsDetailPage({ params }) {
   return (
     <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
-        {/* Back button */}
         <button
           onClick={() => router.back()}
           className="inline-flex items-center text-blue-600 hover:text-blue-800 mb-6"
@@ -53,13 +76,13 @@ export default function NewsDetailPage({ params }) {
           ← Back to News
         </button>
 
-        {/* News content */}
         <div className="bg-white p-8 rounded-lg shadow">
           <h1 className="text-3xl font-bold mb-4">{newsItem.title}</h1>
           <div className="flex justify-between text-sm text-gray-500 mb-6">
             <span>{newsItem.newsPaper} • {newsItem.edition}</span>
             <span>{new Date(newsItem.date).toLocaleDateString()}</span>
           </div>
+          
           {newsItem.image && (
             <img
               src={newsItem.image}
@@ -67,9 +90,11 @@ export default function NewsDetailPage({ params }) {
               className="w-full h-64 object-cover rounded-lg mb-6"
             />
           )}
+          
           <div className="prose max-w-none">
             <p className="text-gray-700">{newsItem.fullContent}</p>
           </div>
+          
           {newsItem.pdfUrl && (
             <div className="mt-8 flex gap-4">
               <a
