@@ -106,7 +106,7 @@ export default function GalleryAdmin() {
         const formData = new FormData();
         formData.append('file', file);
         
-        const response = await fetch('/api/gallery/', {
+        const response = await fetch('/api/gallery/upload', {
           method: 'POST',
           body: formData,
         });

@@ -85,7 +85,7 @@ export default function AdminDashboard() {
               </div>
             </Link>
 
-            <Link href="/admin/events/add" className="bg-white overflow-hidden shadow rounded-lg hover:shadow-md transition-shadow">
+            <Link href="/admin/gallery" className="bg-white overflow-hidden shadow rounded-lg hover:shadow-md transition-shadow">
               <div className="px-4 py-5 sm:p-6 flex items-center">
                 <div className="flex-shrink-0 bg-green-100 rounded-md p-3">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">

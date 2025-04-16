@@ -1,88 +1,14 @@
-// pages/gallery.js
-"use client"
-import { useState } from 'react';
+// app/student-corner/gallery/page.js
+'use client';
+import { useState, useEffect } from 'react';
 import Head from 'next/head';
 
-const GalleryPage = () => {
+export default function GalleryPage() {
   const [activeTab, setActiveTab] = useState('all');
   const [selectedEvent, setSelectedEvent] = useState(null);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
-
-  // Sample gallery data with multiple images per event
-  const galleryData = [
-    {
-      id: 1,
-      title: 'Ethnic Day 2024',
-      category: 'cultural',
-      date: '2024-03-15',
-      description: 'Annual ethnic day celebration showcasing diverse cultures',
-      images: [
-        '/test.jpg',
-        '/test-2.jpg',
-        '/test-3.jpg',
-      ]
-    },
-    {
-      id: 2,
-      title: 'Fresher\'s Welcome',
-      category: 'events',
-      date: '2024-02-10',
-      description: 'Welcome ceremony for new students',
-      images: [
-        '/test.jpg',
-        '/test-2.jpg',
-        '/test-3.jpg',
-      ]
-    },
-    {
-      id: 3,
-      title: 'Convocation 2024',
-      category: 'academic',
-      date: '2024-04-05',
-      description: 'Annual convocation ceremony',
-      images: [
-        '/test.jpg',
-        '/test-2.jpg',
-        '/test-3.jpg',
-      ]
-    },
-    {
-      id: 4,
-      title: 'Sports Day',
-      category: 'sports',
-      date: '2024-01-20',
-      description: 'Annual sports competition',
-      images: [
-        '/test.jpg',
-        '/test-2.jpg',
-        '/test-3.jpg',
-      ]
-    },
-    {
-      id: 5,
-      title: 'NCC Camp',
-      category: 'activities',
-      date: '2023-12-15',
-      description: 'NCC cadets at annual training camp',
-      images: [
-        '/test.jpg',
-        '/test-2.jpg',
-        '/test-3.jpg',
-      ]
-    },
-    {
-      id: 6,
-      title: 'Yoga Day',
-      category: 'events',
-      date: '2023-06-21',
-      description: 'International Yoga Day celebrations',
-      images: [
-        '/test.jpg',
-        '/test-2.jpg',
-        '/test-3.jpg',
-      ]
-    },
-  ];
+  const [galleryData, setGalleryData] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   const categories = [
     { id: 'all', name: 'All Events' },
@@ -92,6 +18,22 @@ const GalleryPage = () => {
     { id: 'activities', name: 'Activities' },
     { id: 'events', name: 'Special Events' },
   ];
+
+  useEffect(() => {
+    const fetchGalleryData = async () => {
+      try {
+        const res = await fetch('/api/gallery');
+        const data = await res.json();
+        setGalleryData(data);
+      } catch (error) {
+        console.error('Error fetching gallery data:', error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchGalleryData();
+  }, []);
 
   const filteredEvents = activeTab === 'all' 
     ? galleryData 
@@ -108,6 +50,16 @@ const GalleryPage = () => {
       : (selectedImageIndex + 1) % selectedEvent.images.length;
     setSelectedImageIndex(newIndex);
   };
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <div className="text-center">
+          <p>Loading gallery...</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -146,7 +98,7 @@ const GalleryPage = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {filteredEvents.map(event => (
             <div 
-              key={event.id} 
+              key={event._id} 
               className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
             >
               <div className="relative h-48 overflow-hidden group">
@@ -187,14 +139,14 @@ const GalleryPage = () => {
           <div className="relative max-w-6xl w-full">
             <button 
               onClick={() => setSelectedEvent(null)}
-              className="absolute -top-12 right-0 text-white text-3xl hover:text-blue-300"
+              className="absolute top-4 right-4 text-gray-600 text-3xl hover:text-blue-500 z-10"
             >
               &times;
             </button>
             
             <div className="bg-white rounded-lg overflow-hidden">
               {/* Main Image */}
-              <div className="relative h-[70vh]">
+              <div className="relative h-[60vh]">
                 <img 
                   src={selectedEvent.images[selectedImageIndex]} 
                   alt={`${selectedEvent.title} - ${selectedImageIndex + 1}`}
@@ -254,6 +206,4 @@ const GalleryPage = () => {
       )}
     </div>
   );
-};
-
-export default GalleryPage;
+}
