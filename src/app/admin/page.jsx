@@ -1,6 +1,13 @@
 import Link from 'next/link';
 
 export default function AdminDashboard() {
+
+  const stats = [
+    { title: "Total News", value: 24, change: "+12%", trend: 'up' },
+    { title: "Upcoming Events", value: 8, change: "+3", trend: 'up' },
+    { title: "Faculty Members", value: 32, change: "0", trend: 'neutral' },
+    { title: "Active Students", value: 486, change: "-2%", trend: 'down' },
+  ];
   // Sample data - replace with your actual data from API or state
   return (
     <div className="min-h-screen bg-gray-50">

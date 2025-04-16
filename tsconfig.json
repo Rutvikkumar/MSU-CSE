@@ -23,6 +23,6 @@
       "public/*":["./public"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/clubs/page.tsx", "src/app/syllabus/[course].jsx", "src/app/news/page.jsx", "src/components/MessageCards.jsx", "src/components/DropdownMenu.jsx", "src/components/CourseCard.jsx", "src/app/facilities/page.tsx", "src/app/student-corner/department-facilities/page.jsx", "src/app/placement/contact-placement-office/page.jsx", "src/app/placement/company-detail/page.jsx", "src/app/student-corner/events-activities/page.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/clubs/page.tsx", "src/app/syllabus/[course].jsx", "src/app/news/page.jsx", "src/components/MessageCards.jsx", "src/components/DropdownMenu.jsx", "src/components/CourseCard.jsx", "src/app/facilities/page.tsx", "src/app/student-corner/department-facilities/page.jsx", "src/app/placement/contact-placement-office/page.jsx", "src/app/placement/company-detail/page.jsx", "src/app/student-corner/events-activities/page.jsx", "next.config.js"],
   "exclude": ["node_modules"]
 }
