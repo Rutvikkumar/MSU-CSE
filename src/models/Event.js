@@ -26,3 +26,45 @@ const eventSchema = new mongoose.Schema({
 });
 
 export default mongoose.models.Event || mongoose.model('Event', eventSchema);
+
+// export async function getEventList() {
+//   try {
+//     await dbConnect();
+//     const events = await Event.find({}).sort({ date: -1 }).lean().exec();
+//     return events;
+//   } catch (error) {
+//     console.error('Error fetching event list:', error);
+//     throw new Error('Failed to fetch event list');
+//   }
+// }
+
+// export async function getEventById(id) {
+//   try {
+//     await dbConnect();
+//     const event = await Event.findById(id).lean().exec();
+//     if (!event) {
+//       throw new Error('Event not found');
+//     }
+//     return event;
+//   } catch (error) {
+//     console.error('Error fetching event:', error);
+//     throw new Error('Failed to fetch event');
+//   }
+// }
+
+// export async function createEvent(eventData) {
+//   await dbConnect();
+//   return Event.create(eventData);
+// }
+
+// export async function updateEvent(id, updates) {
+//   await dbConnect();
+//   return Event.findByIdAndUpdate(id, updates, { new: true }).lean();
+// }
+
+// export async function deleteEvent(id) {
+//   await dbConnect();
+//   return Event.findByIdAndDelete(id);
+// }
+
+// export default Event;

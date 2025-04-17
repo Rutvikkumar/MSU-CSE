@@ -1,94 +1,52 @@
+// app/student-corner/events-activities/[id]/page.js
 'use client';
-import { FiCalendar, FiImage, FiChevronLeft } from 'react-icons/fi';
-import { useRouter } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { FiCalendar, FiImage, FiChevronLeft, FiMapPin, FiClock, FiUser, FiMail } from 'react-icons/fi';
+import { useRouter, useParams } from 'next/navigation';
+import { useState, useEffect } from 'react';
 
-const EventDetailsPage = ({ params }) => {
-  const router = useRouter();
+const EventDetailsPage = () => {
   const [event, setEvent] = useState(null);
   const [loading, setLoading] = useState(true);
   const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0);
-
-  // Sample event data - in a real app, you would fetch this from an API
-  const eventData = [
-    {
-      id: 1,
-      title: 'Annual Science Seminar',
-      date: '2023-05-15',
-      content: 'Join us for our annual science seminar where students present their research projects. This year we have special guest speakers from leading scientific institutions.',
-      description: 'The Annual Science Seminar is a flagship event of our department where students showcase their research work. The event features keynote speeches, poster presentations, and interactive sessions with industry experts. This year\'s theme is "Innovations in Sustainable Technology".',
-      image: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=300&q=80',
-      category: 'Seminar',
-      photos: [
-        'https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&h=600&q=80',
-        'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&h=600&q=80'
-      ],
-      featured: false,
-      location: 'Main Auditorium, Block A',
-      time: '10:00 AM - 4:00 PM',
-      organizer: 'Science Department',
-      contact: 'prof.smith@university.edu'
-    },
-    {
-      id: 2,
-      title: 'Cultural Fest',
-      date: '2023-07-20',
-      content: 'Annual cultural festival showcasing diverse traditions and talents.',
-      description: 'Our university\'s most vibrant event featuring performances, food stalls, and competitions representing cultures from around the world. The event includes dance competitions, music performances, art exhibitions, and culinary delights from different regions.',
-      image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=300&q=80',
-      category: 'Cultural',
-      photos: [
-        'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&h=600&q=80',
-        'https://images.unsplash.com/photo-1469371670807-013ccf25f16a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&h=600&q=80'
-      ],
-      featured: true,
-      location: 'University Grounds',
-      time: '9:00 AM - 9:00 PM',
-      organizer: 'Cultural Committee',
-      contact: 'cultural@university.edu'
-    },
-    {
-      id: 3,
-      title: 'Sports Tournament',
-      date: '2023-09-10',
-      content: 'Inter-department sports competition with various games.',
-      description: 'Annual sports tournament featuring cricket, football, basketball, badminton, and athletics. Teams from all departments compete for the championship trophy. The event promotes sportsmanship and healthy competition among students.',
-      image: 'https://images.unsplash.com/photo-1547347298-4074fc3086f0?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=300&q=80',
-      category: 'Sports',
-      photos: [
-        'https://images.unsplash.com/photo-1574629810360-7efbbe195018?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&h=600&q=80',
-        'https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&h=600&q=80'
-      ],
-      featured: true,
-      location: 'University Sports Complex',
-      time: '8:00 AM - 6:00 PM',
-      organizer: 'Sports Council',
-      contact: 'sports@university.edu'
-    }
-  ];
+  const router = useRouter();
+  const params = useParams();
 
   useEffect(() => {
-    // Find the event with the matching ID
-    const foundEvent = eventData.find(e => e.id.toString() === params.id);
-    if (foundEvent) {
-      setEvent(foundEvent);
-    } else {
-      // Handle case where event is not found
-      console.error('Event not found');
-    }
-    setLoading(false);
+    fetchEvent();
   }, [params.id]);
 
+  const fetchEvent = async () => {
+    try {
+      setLoading(true);
+      const res = await fetch(`/api/events/${params.id}`);
+      const data = await res.json();
+      
+      if (!data) {
+        router.push('/student-corner/event-activities');
+        return;
+      }
+      
+      setEvent(data);
+    } catch (error) {
+      console.error('Error fetching event:', error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   const formatDate = (dateString) => {
-    return new Date(dateString).toLocaleDateString('en-US', {
+    const date = new Date(dateString);
+    return date.toLocaleDateString('en-US', {
+      weekday: 'long',
       year: 'numeric',
       month: 'long',
-      day: 'numeric',
-      weekday: 'long'
+      day: 'numeric'
     });
   };
 
   const navigatePhotos = (direction) => {
+    if (!event?.photos) return;
+    
     if (direction === 'prev') {
       setCurrentPhotoIndex(prev => 
         prev === 0 ? event.photos.length - 1 : prev - 1
@@ -142,7 +100,7 @@ const EventDetailsPage = ({ params }) => {
             {/* Event Image */}
             <div className="md:w-1/2 relative">
               <img 
-                src={event.image} 
+                src={event.imageUrl} 
                 alt={event.title}
                 className="w-full h-full object-cover"
               />
@@ -164,22 +122,35 @@ const EventDetailsPage = ({ params }) => {
 
               <div className="flex items-center text-gray-600 mb-4">
                 <FiCalendar className="mr-2" />
-                <span>{formatDate(event.date)} • {event.time}</span>
+                <span>{formatDate(event.date)}</span>
               </div>
 
               <div className="mb-4">
-                <h3 className="text-sm font-medium text-gray-500">Location</h3>
-                <p className="text-gray-800">{event.location}</p>
+                <h3 className="text-sm font-medium text-gray-500 flex items-center">
+                  <FiMapPin className="mr-2" /> Location
+                </h3>
+                <p className="text-gray-800 ml-6">{event.location}</p>
               </div>
 
               <div className="mb-4">
-                <h3 className="text-sm font-medium text-gray-500">Organized by</h3>
-                <p className="text-gray-800">{event.organizer}</p>
+                <h3 className="text-sm font-medium text-gray-500 flex items-center">
+                  <FiClock className="mr-2" /> Time
+                </h3>
+                <p className="text-gray-800 ml-6">{event.time}</p>
+              </div>
+
+              <div className="mb-4">
+                <h3 className="text-sm font-medium text-gray-500 flex items-center">
+                  <FiUser className="mr-2" /> Organized by
+                </h3>
+                <p className="text-gray-800 ml-6">{event.organizer}</p>
               </div>
 
               <div className="mb-6">
-                <h3 className="text-sm font-medium text-gray-500">Contact</h3>
-                <p className="text-gray-800">{event.contact}</p>
+                <h3 className="text-sm font-medium text-gray-500 flex items-center">
+                  <FiMail className="mr-2" /> Contact
+                </h3>
+                <p className="text-gray-800 ml-6">{event.contact}</p>
               </div>
 
               {event.photos?.length > 0 && (
@@ -202,7 +173,7 @@ const EventDetailsPage = ({ params }) => {
         </div>
 
         {/* Photo Gallery */}
-        {event.photos?.length > 0 && currentPhotoIndex !== null && (
+        {event.photos?.length > 0 && (
           <div className="bg-white rounded-lg shadow-md p-6">
             <h2 className="text-xl font-semibold text-gray-900 mb-4">Event Gallery</h2>
             

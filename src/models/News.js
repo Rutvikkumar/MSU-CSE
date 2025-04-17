@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+  import mongoose from 'mongoose';
 import dbConnect from '../lib/db';
 
 const newsSchema = new mongoose.Schema({

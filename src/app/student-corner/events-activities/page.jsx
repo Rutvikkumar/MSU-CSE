@@ -1,72 +1,76 @@
 'use client';
-import { useRouter } from 'next/navigation';
 import { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import { FiCalendar, FiFilter, FiX, FiChevronLeft, FiChevronRight, FiImage } from 'react-icons/fi';
 
 const EventsPage = () => {
-
-  const [selectedCategory, setSelectedCategory] = useState('');
-  const [yearFilter, setYearFilter] = useState('');
-  const [monthFilter, setMonthFilter] = useState('');
+  const [events, setEvents] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [filters, setFilters] = useState({
+    category: '',
+    year: '',
+    month: ''
+  });
   const [showPhotosForEvent, setShowPhotosForEvent] = useState(null);
   const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0);
   const [isFilterPanelOpen, setIsFilterPanelOpen] = useState(false);
+  const router = useRouter();
 
-  // Sample event data - replace with your actual data
-  const [eventData, setEventData] = useState([
-    {
-      id: 1,
-      title: 'Annual Science Seminar',
-      date: '2023-05-15',
-      content: 'Join us for our annual science seminar where students present their research projects.',
-      image: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=300&q=80',
-      category: 'Seminar',
-      photos: ['https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=300&q=80'],
-      featured: false
-    },
-    {
-      id: 2,
-      title: 'Cultural Fest',
-      date: '2023-07-20',
-      content: 'Annual cultural festival showcasing diverse traditions and talents.',
-      image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=300&q=80',
-      category: 'Cultural',
-      photos: ['https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=300&q=80'],
-      featured: true
-    },
-    {
-      id: 3,
-      title: 'Sports Tournament',
-      date: '2023-09-10',
-      content: 'Inter-department sports competition with various games.',
-      image: 'https://images.unsplash.com/photo-1547347298-4074fc3086f0?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=300&q=80',
-      category: 'Sports',
-      photos: ['https://images.unsplash.com/photo-1574629810360-7efbbe195018?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=300&q=80','https://images.unsplash.com/photo-1574629810360-7efbbe195018?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=300&q=80'],
-      featured: true
-    }
-  ]);
+  // Fetch events from API
+  useEffect(() => {
+    const fetchEvents = async () => {
+      try {
+        setLoading(true);
+        let url = '/api/events';
+        const params = new URLSearchParams();
+        
+        if (filters.category) params.append('category', filters.category);
+        if (filters.year) params.append('year', filters.year);
+        if (filters.month) params.append('month', filters.month);
+        
+        if (params.toString()) url += `?${params.toString()}`;
+        
+        const res = await fetch(url);
+        const data = await res.json();
+        setEvents(data);
+      } catch (error) {
+        console.error('Error fetching events:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    
+    fetchEvents();
+  }, [filters]);
+
+  // Available categories
   const categories = [
     'Seminar', 'Cultural', 'Sports', 'Celebration', 'Webinar',
     'Competition', 'Workshop', 'Lecture/Talk', 'Conference',
     'Exhibition', 'Visit', 'STTP', 'FDP', 'Symposium',
     'Student Event', 'Festival'
   ];
-  const years = [...new Set(eventData.map(item => new Date(item.date).getFullYear()))]
+
+  // Get unique years from events
+  const years = [...new Set(events.map(event => new Date(event.date).getFullYear()))]
     .sort((a, b) => b - a);
 
-  const filteredEvents = eventData.filter(event => {
+  // Filtered events
+  const filteredEvents = events.filter(event => {
     const eventDate = new Date(event.date);
     const eventYear = eventDate.getFullYear();
     const eventMonth = String(eventDate.getMonth() + 1).padStart(2, '0');
 
     return (
-      (!selectedCategory || event.category === selectedCategory) &&
-      (!yearFilter || eventYear === parseInt(yearFilter)) &&
-      (!monthFilter || eventMonth === monthFilter)
+      (!filters.category || event.category === filters.category) &&
+      (!filters.year || eventYear === parseInt(filters.year)) &&
+      (!filters.month || eventMonth === filters.month)
     );
   });
 
-  const featuredEvents = eventData.filter(event => event.featured);
+  const featuredEvents = events.filter(event => event.featured);
+
+  // Format date
   const formatDate = (dateString) => {
     return new Date(dateString).toLocaleDateString('en-US', {
       year: 'numeric',
@@ -74,16 +78,19 @@ const EventsPage = () => {
       day: 'numeric'
     });
   };
+
+  // Clear all filters
   const clearFilters = () => {
-    setSelectedCategory('');
-    setYearFilter('');
-    setMonthFilter('');
+    setFilters({
+      category: '',
+      year: '',
+      month: ''
+    });
   };
 
-
-
+  // Photo gallery navigation
   const navigatePhotos = (direction) => {
-    const currentEvent = eventData.find(e => e.id === showPhotosForEvent);
+    const currentEvent = events.find(e => e._id === showPhotosForEvent);
     if (!currentEvent) return;
 
     if (direction === 'prev') {
@@ -97,7 +104,7 @@ const EventsPage = () => {
     }
   };
 
-
+  // Close photo gallery
   const closeGallery = () => {
     setShowPhotosForEvent(null);
     setCurrentPhotoIndex(0);
@@ -108,7 +115,13 @@ const EventsPage = () => {
     setIsFilterPanelOpen(!isFilterPanelOpen);
   };
 
-
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gray-50 py-8 px-4 sm:px-6 lg:px-8">
@@ -137,16 +150,16 @@ const EventsPage = () => {
           </div>
         </div>
 
-        {/* Featured Events (optional) */}
+        {/* Featured Events */}
         {featuredEvents.length > 0 && (
           <div className="mb-10">
             <h2 className="text-xl font-semibold text-gray-900 mb-4">Featured Events</h2>
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {featuredEvents.map(event => (
                 <EventCard
-                  key={event.id}
+                  key={event._id}
                   event={event}
-                  onViewPhotos={() => setShowPhotosForEvent(event.id)}
+                  onViewPhotos={() => setShowPhotosForEvent(event._id)}
                   formatDate={formatDate}
                   featured
                 />
@@ -183,8 +196,8 @@ const EventsPage = () => {
                           id={`cat-${category}`}
                           type="radio"
                           name="category"
-                          checked={selectedCategory === category}
-                          onChange={() => setSelectedCategory(selectedCategory === category ? '' : category)}
+                          checked={filters.category === category}
+                          onChange={() => setFilters({...filters, category})}
                           className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
                         />
                         <label htmlFor={`cat-${category}`} className="ml-3 text-sm text-gray-700">
@@ -203,8 +216,8 @@ const EventsPage = () => {
                     </label>
                     <select
                       id="year"
-                      value={yearFilter}
-                      onChange={(e) => setYearFilter(e.target.value)}
+                      value={filters.year}
+                      onChange={(e) => setFilters({...filters, year: e.target.value, month: ''})}
                       className="block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 py-2 px-3 border text-sm"
                     >
                       <option value="">All Years</option>
@@ -220,10 +233,10 @@ const EventsPage = () => {
                     </label>
                     <select
                       id="month"
-                      value={monthFilter}
-                      onChange={(e) => setMonthFilter(e.target.value)}
+                      value={filters.month}
+                      onChange={(e) => setFilters({...filters, month: e.target.value})}
                       className="block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 py-2 px-3 border text-sm"
-                      disabled={!yearFilter}
+                      disabled={!filters.year}
                     >
                       <option value="">All Months</option>
                       {Array.from({ length: 12 }, (_, i) => {
@@ -251,33 +264,90 @@ const EventsPage = () => {
                       <FiX size={24} />
                     </button>
                   </div>
-                  {/* Mobile filter content would go here */}
-                  {/* (Same as desktop filters but optimized for mobile) */}
+                  
+                  {/* Category Filter */}
+                  <div className="mb-6">
+                    <label className="block text-sm font-medium mb-2">Category</label>
+                    <div className="grid grid-cols-2 gap-2">
+                      {categories.map(category => (
+                        <button
+                          key={category}
+                          onClick={() => setFilters({...filters, category})}
+                          className={`p-2 rounded text-sm ${filters.category === category ? 'bg-blue-100 text-blue-800' : 'bg-gray-100'}`}
+                        >
+                          {category}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Year Filter */}
+                  <div className="mb-4">
+                    <label className="block text-sm font-medium mb-1">Year</label>
+                    <select
+                      value={filters.year}
+                      onChange={(e) => setFilters({...filters, year: e.target.value, month: ''})}
+                      className="w-full p-2 border rounded"
+                    >
+                      <option value="">All Years</option>
+                      {years.map(year => (
+                        <option key={year} value={year}>{year}</option>
+                      ))}
+                    </select>
+                  </div>
+
+                  {/* Month Filter */}
+                  <div className="mb-4">
+                    <label className="block text-sm font-medium mb-1">Month</label>
+                    <select
+                      value={filters.month}
+                      onChange={(e) => setFilters({...filters, month: e.target.value})}
+                      className="w-full p-2 border rounded"
+                      disabled={!filters.year}
+                    >
+                      <option value="">All Months</option>
+                      {Array.from({ length: 12 }, (_, i) => {
+                        const monthValue = String(i + 1).padStart(2, '0');
+                        const monthName = new Date(0, i).toLocaleString('en-US', { month: 'short' });
+                        return (
+                          <option key={monthValue} value={monthValue}>{monthName}</option>
+                        );
+                      })}
+                    </select>
+                  </div>
+
+                  <button
+                    onClick={clearFilters}
+                    className="w-full bg-gray-200 hover:bg-gray-300 text-gray-800 py-2 rounded"
+                  >
+                    Clear Filters
+                  </button>
                 </div>
               </div>
             </div>
           )}
+
           {/* Events Grid */}
           <div className="flex-1">
             {/* Results header */}
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 gap-3">
               <div>
                 <h2 className="text-xl font-semibold text-gray-900">
-                  {selectedCategory || 'All'} Events
+                  {filters.category || 'All'} Events
                 </h2>
                 <p className="text-sm text-gray-500">
                   {filteredEvents.length} {filteredEvents.length === 1 ? 'event' : 'events'} found
-                  {(yearFilter || monthFilter) && (
+                  {(filters.year || filters.month) && (
                     <span>
                       {' in '}
-                      {monthFilter && `${new Date(0, monthFilter - 1).toLocaleString('en-US', { month: 'long' })} `}
-                      {yearFilter}
+                      {filters.month && `${new Date(0, filters.month - 1).toLocaleString('en-US', { month: 'long' })} `}
+                      {filters.year}
                     </span>
                   )}
                 </p>
               </div>
               <div className="flex gap-2">
-                {(selectedCategory || yearFilter || monthFilter) && (
+                {(filters.category || filters.year || filters.month) && (
                   <button
                     onClick={clearFilters}
                     className="flex items-center gap-1 text-sm bg-gray-100 hover:bg-gray-200 px-3 py-1.5 rounded-md"
@@ -293,9 +363,9 @@ const EventsPage = () => {
               <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
                 {filteredEvents.map(event => (
                   <EventCard
-                    key={event.id}
+                    key={event._id}
                     event={event}
-                    onViewPhotos={() => setShowPhotosForEvent(event.id)}
+                    onViewPhotos={() => setShowPhotosForEvent(event._id)}
                     formatDate={formatDate}
                   />
                 ))}
@@ -307,12 +377,12 @@ const EventsPage = () => {
                 </div>
                 <h3 className="text-lg font-medium text-gray-900 mb-1">No events found</h3>
                 <p className="text-gray-600 mb-4">
-                  {selectedCategory || yearFilter || monthFilter ?
+                  {filters.category || filters.year || filters.month ?
                     "Try adjusting your filters" :
                     "Check back later for upcoming events"
                   }
                 </p>
-                {(selectedCategory || yearFilter || monthFilter) && (
+                {(filters.category || filters.year || filters.month) && (
                   <button
                     onClick={clearFilters}
                     className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md"
@@ -356,7 +426,7 @@ const EventsPage = () => {
             <div className="flex flex-col h-full">
               <div className="flex-1 flex items-center justify-center">
                 <img
-                  src={eventData.find(e => e.id === showPhotosForEvent)?.photos[currentPhotoIndex]}
+                  src={events.find(e => e._id === showPhotosForEvent)?.photos[currentPhotoIndex]}
                   alt={`Event photo ${currentPhotoIndex + 1}`}
                   className="max-w-full max-h-[80vh] object-contain"
                 />
@@ -364,7 +434,7 @@ const EventsPage = () => {
 
               {/* Photo counter */}
               <div className="text-center text-white py-4">
-                Photo {currentPhotoIndex + 1} of {eventData.find(e => e.id === showPhotosForEvent)?.photos.length}
+                Photo {currentPhotoIndex + 1} of {events.find(e => e._id === showPhotosForEvent)?.photos.length}
               </div>
             </div>
           </div>
@@ -373,6 +443,7 @@ const EventsPage = () => {
     </div>
   );
 };
+
 // Event Card Component
 const EventCard = ({ event, onViewPhotos, formatDate, featured = false }) => {
   const router = useRouter();
@@ -380,7 +451,7 @@ const EventCard = ({ event, onViewPhotos, formatDate, featured = false }) => {
   const handleCardClick = (e) => {
     // Prevent navigation if clicking on the "View Photos" button
     if (e.target.closest('button')) return;
-    router.push(`/student-corner/events-activities/${event.id}`);
+    router.push(`/student-corner/events-activities/${event._id}`);
   };
 
   return (
@@ -391,7 +462,7 @@ const EventCard = ({ event, onViewPhotos, formatDate, featured = false }) => {
       {/* Event image */}
       <div className="relative h-48 w-full">
         <img
-          src={event.image}
+          src={event.imageUrl}
           alt={event.title}
           className="w-full h-full object-cover"
           loading="lazy"
@@ -436,6 +507,5 @@ const EventCard = ({ event, onViewPhotos, formatDate, featured = false }) => {
     </div>
   );
 };
-
 
 export default EventsPage;
